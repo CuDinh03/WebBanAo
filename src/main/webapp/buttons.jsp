@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +32,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
 
             <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh </div>
         </a>
@@ -41,7 +42,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="index.jsp">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Trang chủ</span></a>
         </li>
@@ -64,8 +65,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
-                    <a class="collapse-item" href="buttons.html">Khu vực kho hàng</a>
-                    <a class="collapse-item" href="cards.html">Thông tin nhập xuất kho</a>
+                    <a class="collapse-item" href="buttons.jsp">Khu vực kho hàng</a>
+                    <a class="collapse-item" href="cards.jsp">Thông tin nhập xuất kho</a>
                 </div>
             </div>
         </li>
@@ -107,13 +108,13 @@
         <!--                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">-->
         <!--                    <div class="bg-white py-2 collapse-inner rounded">-->
         <!--                        <h6 class="collapse-header">Login Screens:</h6>-->
-        <!--                        <a class="collapse-item" href="login.html">Login</a>-->
+        <!--                        <a class="collapse-item" href="login.jsp">Login</a>-->
         <!--                        <a class="collapse-item" href="register.html">Register</a>-->
         <!--                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>-->
         <!--                        <div class="collapse-divider"></div>-->
         <!--                        <h6 class="collapse-header">Other Pages:</h6>-->
-        <!--                        <a class="collapse-item" href="404.html">404 Page</a>-->
-        <!--                        <a class="collapse-item" href="blank.html">Blank Page</a>-->
+        <!--                        <a class="collapse-item" href="404.jsp">404 Page</a>-->
+        <!--                        <a class="collapse-item" href="blank.jsp">Blank Page</a>-->
         <!--                    </div>-->
         <!--                </div>-->
         <!--            </li>-->
@@ -122,12 +123,12 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="tables.jsp">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Thực phẩm</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tables2.html">
+            <a class="nav-link" href="tables2.jsp">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Kho</span></a>
         </li>
@@ -323,6 +324,7 @@
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<%--                            name user--%>
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
                             <img class="img-profile rounded-circle"
                                  src="img/undraw_profile.svg">
@@ -355,8 +357,7 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Danh sách thực phẩm thực phẩm </h1>
-
+                <h1 class="h3 mb-2 text-gray-800">Danh sách kho</h1>
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
@@ -371,110 +372,84 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Mã thực phẩm</th>
-                                    <th>Tên thực phẩm</th>
-                                    <th>Giá thực phẩm</th>
-                                    <th>Số lượng sản phẩm</th>
-                                    <th>Ảnh</th>
-                                    <th>Ngày nhập kho</th>
-                                    <th>Hạn sử dụng</th>
-                                    <th>Loại sản phẩm</th>
-                                    <th>Trạng thái</th>
-                                    <th>Chi tiết</th>
+                                    <th>Mã kho hàng</th>
+                                    <th>Tên kho hàng</th>
+                                    <th>Thực phẩm trong kho</th>
+                                    <th>Địa chỉ kho hàng</th>
+                                    <th>Loại kho hàng</th>
+                                    <th>Trạng thái kho hàng</th>
                                     <th>Hành động</th>
+
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>Mã thực phẩm</th>
-                                    <th>Tên thực phẩm</th>
-                                    <th>Giá thực phẩm</th>
-                                    <th>Số lượng sản phẩm</th>
-                                    <th>Ảnh</th>
-                                    <th>Ngày nhập kho</th>
-                                    <th>Hạn sử dụng</th>
-                                    <th>Loại thực phẩm</th>
-                                    <th>Trạng thái</th>
-                                    <th>Chi tiết</th>
+                                    <th>Mã kho hàng</th>
+                                    <th>Tên kho hàng</th>
+                                    <th>Thực phẩm trong kho</th>
+                                    <th>Địa chỉ kho hàng</th>
+                                    <th>Loại kho hàng</th>
+                                    <th>Trạng thái kho hàng</th>
                                     <th>Hành động</th>
+
                                 </tr>
                                 </tfoot>
                                 <tbody>
                                 <tr>
-                                    <td>TPT01</td>
-                                    <td>Khoai tây</td>
-                                    <td>10.000 vnđ </td>
-                                    <td>61</td>
-                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
-                                    <td>28/2/2023</td>
-                                    <td>3/3/2023</td>
-                                    <td>Thức ăn</td>
-                                    <td>Còn trong kho</td>
-                                    <td>Thực phẩm giàu tinh bột</td>
+                                    <td>KHCG550</td>
+                                    <td>Kho hàng Cầu Giấy</td>
+                                    <td>Danh sách: </td>
+                                    <td>20 Xuân Thuỷ, Cầu Giấy, Hà Nội </td>
+                                    <td>Kho thực phẩm</td>
+                                    <td>Kho vẫn sử dụng</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>TPT01</td>
-                                    <td>Khoai tây</td>
-                                    <td>10.000 vnđ </td>
-                                    <td>61</td>
-                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
-                                    <td>28/2/2023</td>
-                                    <td>3/3/2023</td>
-                                    <td>Thức ăn</td>
-                                    <td>Còn trong kho</td>
-                                    <td>Thực phẩm giàu tinh bột</td>
+                                    <td>KHTX889</td>
+                                    <td>Kho hàng Thanh Xuân</td>
+                                    <td>Thực phẩm trong kho</td>
+                                    <td>Địa chỉ kho hàng</td>
+                                    <td>Loại kho hàng</td>
+                                    <td>Trạng thái kho hàng</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>TPT01</td>
-                                    <td>Khoai tây</td>
-                                    <td>10.000 vnđ </td>
-                                    <td>61</td>
-                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
-                                    <td>28/2/2023</td>
-                                    <td>3/3/2023</td>
-                                    <td>Thức ăn</td>
-                                    <td>Còn trong kho</td>
-                                    <td>Thực phẩm giàu tinh bột</td>
+                                    <td>KHDD668</td>
+                                    <td>Kho hàng Đống Đa</td>
+                                    <td>Thực phẩm trong kho</td>
+                                    <td>Địa chỉ kho hàng</td>
+                                    <td>Loại kho hàng</td>
+                                    <td>Trạng thái kho hàng</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>TPT01</td>
-                                    <td>Khoai tây</td>
-                                    <td>10.000 vnđ </td>
-                                    <td>61</td>
-                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
-                                    <td>28/2/2023</td>
-                                    <td>3/3/2023</td>
-                                    <td>Thức ăn</td>
-                                    <td>Còn trong kho</td>
-                                    <td>Thực phẩm giàu tinh bột</td>
+                                    <td>KHVT363</td>
+                                    <td>Kho hàng Vĩnh Tuy</td>
+                                    <td>Thực phẩm trong kho</td>
+                                    <td>Địa chỉ kho hàng</td>
+                                    <td>Loại kho hàng</td>
+                                    <td>Trạng thái kho hàng</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>TPT01</td>
-                                    <td>Khoai tây</td>
-                                    <td>10.000 vnđ </td>
-                                    <td>61</td>
-                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
-                                    <td>28/2/2023</td>
-                                    <td>3/3/2023</td>
-                                    <td>Thức ăn</td>
-                                    <td>Còn trong kho</td>
-                                    <td>Thực phẩm giàu tinh bột</td>
+                                    <td>KHHCM226</td>
+                                    <td>Kho hàng Hồ Chí Minh</td>
+                                    <td>Thực phẩm trong kho</td>
+                                    <td>Địa chỉ kho hàng</td>
+                                    <td>Loại kho hàng</td>
+                                    <td>Trạng thái kho hàng</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
@@ -528,7 +503,7 @@
             <div class="modal-body">Chọn "đăng xuất" nếu bạn thực sự muốn đăng xuất ra ngoài</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
-                <a class="btn btn-primary" href="login.html">Đăng xuất</a>
+                <a class="btn btn-primary" href="login.jsp">Đăng xuất</a>
             </div>
         </div>
     </div>

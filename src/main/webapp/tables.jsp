@@ -32,7 +32,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
 
             <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh </div>
         </a>
@@ -42,7 +42,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.jsp">
+            <a class="nav-link" href="index.html">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Trang chủ</span></a>
         </li>
@@ -356,7 +356,8 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Danh sách kho</h1>
+                <h1 class="h3 mb-2 text-gray-800">Danh sách thực phẩm thực phẩm </h1>
+
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
@@ -371,84 +372,110 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
+                                    <th>Mã thực phẩm</th>
+                                    <th>Tên thực phẩm</th>
+                                    <th>Giá thực phẩm</th>
+                                    <th>Số lượng sản phẩm</th>
+                                    <th>Ảnh</th>
+                                    <th>Ngày nhập kho</th>
+                                    <th>Hạn sử dụng</th>
+                                    <th>Loại sản phẩm</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chi tiết</th>
                                     <th>Hành động</th>
-
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
+                                    <th>Mã thực phẩm</th>
+                                    <th>Tên thực phẩm</th>
+                                    <th>Giá thực phẩm</th>
+                                    <th>Số lượng sản phẩm</th>
+                                    <th>Ảnh</th>
+                                    <th>Ngày nhập kho</th>
+                                    <th>Hạn sử dụng</th>
+                                    <th>Loại thực phẩm</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chi tiết</th>
                                     <th>Hành động</th>
-
                                 </tr>
                                 </tfoot>
                                 <tbody>
                                 <tr>
-                                    <td>KHCG550</td>
-                                    <td>Kho hàng Cầu Giấy</td>
-                                    <td>Danh sách: </td>
-                                    <td>20 Xuân Thuỷ, Cầu Giấy, Hà Nội </td>
-                                    <td>Kho thực phẩm</td>
-                                    <td>Kho vẫn sử dụng</td>
+                                    <td>TPT01</td>
+                                    <td>Khoai tây</td>
+                                    <td>10.000 vnđ </td>
+                                    <td>61</td>
+                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
+                                    <td>28/2/2023</td>
+                                    <td>3/3/2023</td>
+                                    <td>Thức ăn</td>
+                                    <td>Còn trong kho</td>
+                                    <td>Thực phẩm giàu tinh bột</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>KHTX889</td>
-                                    <td>Kho hàng Thanh Xuân</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
+                                    <td>TPT01</td>
+                                    <td>Khoai tây</td>
+                                    <td>10.000 vnđ </td>
+                                    <td>61</td>
+                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
+                                    <td>28/2/2023</td>
+                                    <td>3/3/2023</td>
+                                    <td>Thức ăn</td>
+                                    <td>Còn trong kho</td>
+                                    <td>Thực phẩm giàu tinh bột</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>KHDD668</td>
-                                    <td>Kho hàng Đống Đa</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
+                                    <td>TPT01</td>
+                                    <td>Khoai tây</td>
+                                    <td>10.000 vnđ </td>
+                                    <td>61</td>
+                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
+                                    <td>28/2/2023</td>
+                                    <td>3/3/2023</td>
+                                    <td>Thức ăn</td>
+                                    <td>Còn trong kho</td>
+                                    <td>Thực phẩm giàu tinh bột</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>KHVT363</td>
-                                    <td>Kho hàng Vĩnh Tuy</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
+                                    <td>TPT01</td>
+                                    <td>Khoai tây</td>
+                                    <td>10.000 vnđ </td>
+                                    <td>61</td>
+                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
+                                    <td>28/2/2023</td>
+                                    <td>3/3/2023</td>
+                                    <td>Thức ăn</td>
+                                    <td>Còn trong kho</td>
+                                    <td>Thực phẩm giàu tinh bột</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>KHHCM226</td>
-                                    <td>Kho hàng Hồ Chí Minh</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
+                                    <td>TPT01</td>
+                                    <td>Khoai tây</td>
+                                    <td>10.000 vnđ </td>
+                                    <td>61</td>
+                                    <td><img src="https://vinmec-prod.s3.amazonaws.com/images/20200418_145937_369667_khoai-tay.max-800x800.jpg" width="150" height="100" alt="loading"></td>
+                                    <td>28/2/2023</td>
+                                    <td>3/3/2023</td>
+                                    <td>Thức ăn</td>
+                                    <td>Còn trong kho</td>
+                                    <td>Thực phẩm giàu tinh bột</td>
                                     <td>
                                         <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
                                         <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
