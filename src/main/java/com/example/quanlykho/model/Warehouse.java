@@ -6,13 +6,13 @@ public class Warehouse {
     private String wareHouseName;
     private Products products;
     private String wareHouseLocation;
-    private String wareHouseStatus;
+    private int wareHouseStatus;
     private WarehouseTypes warehouseTypes;
 
     public Warehouse() {
     }
 
-    public Warehouse(int wareHouseId, String wareHouseCode, String wareHouseName, Products products, String wareHouseLocation, String wareHouseStatus, WarehouseTypes warehouseTypes) {
+    public Warehouse(int wareHouseId, String wareHouseCode, String wareHouseName, Products products, String wareHouseLocation, int wareHouseStatus, WarehouseTypes warehouseTypes) {
         this.wareHouseId = wareHouseId;
         this.wareHouseCode = wareHouseCode;
         this.wareHouseName = wareHouseName;
@@ -62,11 +62,11 @@ public class Warehouse {
         this.wareHouseLocation = wareHouseLocation;
     }
 
-    public String getWareHouseStatus() {
+    public int getWareHouseStatus() {
         return wareHouseStatus;
     }
 
-    public void setWareHouseStatus(String wareHouseStatus) {
+    public void setWareHouseStatus(int wareHouseStatus) {
         this.wareHouseStatus = wareHouseStatus;
     }
 
