@@ -1,14 +1,16 @@
 package com.example.quanlykho.model;
 
 
-public class User {
+public class Users {
+    private int id;
     private String userName;
     private String passWord;
 
-    public User() {
+    public Users() {
     }
 
-    public User(String userName, String passWord) {
+    public Users(int id, String userName, String passWord) {
+        this.id = id;
         this.userName = userName;
         this.passWord = passWord;
     }
@@ -27,5 +29,13 @@ public class User {
 
     public void setPassWord(String passWord) {
         this.passWord = passWord;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

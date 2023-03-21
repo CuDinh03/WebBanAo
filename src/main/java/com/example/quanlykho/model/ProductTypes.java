@@ -4,12 +4,12 @@ public class ProductTypes {
     private int productTypesId;
     private String productTypesCode;
     private String productTypesName;
-    private boolean productTypesStatus;
+    private int productTypesStatus;
 
     public ProductTypes() {
     }
 
-    public ProductTypes(int productTypesId, String productTypesCode, String productTypesName, boolean productTypesStatus) {
+    public ProductTypes(int productTypesId, String productTypesCode, String productTypesName, int productTypesStatus) {
         this.productTypesId = productTypesId;
         this.productTypesCode = productTypesCode;
         this.productTypesName = productTypesName;
@@ -40,11 +40,11 @@ public class ProductTypes {
         this.productTypesName = productTypesName;
     }
 
-    public boolean isProductTypesStatus() {
+    public int isProductTypesStatus() {
         return productTypesStatus;
     }
 
-    public void setProductTypeStatus(boolean productTypesStatus) {
+    public void setProductTypeStatus(int productTypesStatus) {
         this.productTypesStatus = productTypesStatus;
     }
 }
