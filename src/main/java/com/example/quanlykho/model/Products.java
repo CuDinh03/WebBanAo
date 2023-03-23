@@ -13,12 +13,12 @@ public class Products {
     private String productInputDay;
     private Date productExpiry;
     private ProductTypes productTypes;
-    private Boolean productStatus;
+    private int productStatus;
 
     public Products() {
     }
 
-    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, String productInputDay, Date productExpiry, ProductTypes productTypes, Boolean productStatus) {
+    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, String productInputDay, Date productExpiry, ProductTypes productTypes, int productStatus) {
         this.productId = productId;
         this.productCode = productCode;
         this.productName = productName;
@@ -104,11 +104,11 @@ public class Products {
         this.productTypes = productTypes;
     }
 
-    public Boolean getProductStatus() {
+    public int getProductStatus() {
         return productStatus;
     }
 
-    public void setProductStatus(Boolean productStatus) {
+    public void setProductStatus(int productStatus) {
         this.productStatus = productStatus;
     }
 

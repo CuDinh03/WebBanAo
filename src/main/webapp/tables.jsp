@@ -1,4 +1,13 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: maccuacu
+  Date: 21/03/2023
+  Time: 15:54
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,9 +41,9 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
 
-            <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh </div>
+            <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh</div>
         </a>
 
         <!-- Divider -->
@@ -42,7 +51,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.jsp">
+            <a class="nav-link" href="index.html">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Trang chủ</span></a>
         </li>
@@ -70,56 +79,12 @@
                 </div>
             </div>
         </li>
-
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <!--            <li class="nav-item">-->
-        <!--                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"-->
-        <!--                    aria-expanded="true" aria-controls="collapseUtilities">-->
-        <!--                    <i class="fas fa-fw fa-wrench"></i>-->
-        <!--                    <span>Utilities</span>-->
-        <!--                </a>-->
-        <!--                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"-->
-        <!--                    data-parent="#accordionSidebar">-->
-        <!--                    <div class="bg-white py-2 collapse-inner rounded">-->
-        <!--                        <h6 class="collapse-header">Custom Utilities:</h6>-->
-        <!--                        <a class="collapse-item" href="utilities-color.html">Colors</a>-->
-        <!--                        <a class="collapse-item" href="utilities-border.html">Borders</a>-->
-        <!--                        <a class="collapse-item" href="utilities-animation.html">Animations</a>-->
-        <!--                        <a class="collapse-item" href="utilities-other.html">Other</a>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </li>-->
-
-        <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Heading -->
         <div class="sidebar-heading">
             Tuỳ chọn nhanh
         </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <!--            <li class="nav-item">-->
-        <!--                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"-->
-        <!--                    aria-expanded="true" aria-controls="collapsePages">-->
-        <!--                    <i class="fas fa-fw fa-folder"></i>-->
-        <!--                    <span>Pages</span>-->
-        <!--                </a>-->
-        <!--                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">-->
-        <!--                    <div class="bg-white py-2 collapse-inner rounded">-->
-        <!--                        <h6 class="collapse-header">Login Screens:</h6>-->
-        <!--                        <a class="collapse-item" href="login.jsp">Login</a>-->
-        <!--                        <a class="collapse-item" href="register.html">Register</a>-->
-        <!--                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>-->
-        <!--                        <div class="collapse-divider"></div>-->
-        <!--                        <h6 class="collapse-header">Other Pages:</h6>-->
-        <!--                        <a class="collapse-item" href="404.jsp">404 Page</a>-->
-        <!--                        <a class="collapse-item" href="blank.jsp">Blank Page</a>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </li>-->
-
-        <!-- Nav Item - Charts -->
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
@@ -140,7 +105,6 @@
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-
 
 
     </ul>
@@ -274,7 +238,8 @@
                                 </div>
                                 <div class="font-weight-bold">
                                     <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                        problem I've been having.</div>
+                                        problem I've been having.
+                                    </div>
                                     <div class="small text-gray-500">Emily Fowler · 58m</div>
                                 </div>
                             </a>
@@ -286,7 +251,8 @@
                                 </div>
                                 <div>
                                     <div class="text-truncate">I have the photos that you ordered last month, how
-                                        would you like them sent to you?</div>
+                                        would you like them sent to you?
+                                    </div>
                                     <div class="small text-gray-500">Jae Chun · 1d</div>
                                 </div>
                             </a>
@@ -298,7 +264,8 @@
                                 </div>
                                 <div>
                                     <div class="text-truncate">Last month's report looks great, I am very happy with
-                                        the progress so far, keep up the good work!</div>
+                                        the progress so far, keep up the good work!
+                                    </div>
                                     <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                 </div>
                             </a>
@@ -310,7 +277,8 @@
                                 </div>
                                 <div>
                                     <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                        told me that people say this to all dogs, even if they aren't good...</div>
+                                        told me that people say this to all dogs, even if they aren't good...
+                                    </div>
                                     <div class="small text-gray-500">Chicken the Dog · 2w</div>
                                 </div>
                             </a>
@@ -356,12 +324,13 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Danh sách kho</h1>
+                <h1 class="h3 mb-2 text-gray-800">Danh sách thực phẩm thực phẩm </h1>
+
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Danh sách toàn bộ thực phẩm có trong kho
-                            <a type="button" class="btn btn-info" href="/edit-product?id=${p.idProduct}">Thêm mới</a>
+                            <a type="button" class="btn btn-info" href="/edit-product?id=${p.productId}">Thêm mới</a>
 
                         </h6>
 
@@ -371,89 +340,55 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
+                                    <th>Mã thực phẩm</th>
+                                    <th>Tên thực phẩm</th>
+                                    <th>Giá thực phẩm</th>
+                                    <th>Số lượng sản phẩm</th>
+                                    <th>Ảnh</th>
+                                    <th>Ngày nhập kho</th>
+                                    <th>Hạn sử dụng</th>
+                                    <th>Loại sản phẩm</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chi tiết</th>
                                     <th>Hành động</th>
-
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
+                                    <th>Mã thực phẩm</th>
+                                    <th>Tên thực phẩm</th>
+                                    <th>Giá thực phẩm</th>
+                                    <th>Số lượng sản phẩm</th>
+                                    <th>Ảnh</th>
+                                    <th>Ngày nhập kho</th>
+                                    <th>Hạn sử dụng</th>
+                                    <th>Loại thực phẩm</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chi tiết</th>
                                     <th>Hành động</th>
-
                                 </tr>
                                 </tfoot>
                                 <tbody>
-                                <tr>
-                                    <td>KHCG550</td>
-                                    <td>Kho hàng Cầu Giấy</td>
-                                    <td>Danh sách: </td>
-                                    <td>20 Xuân Thuỷ, Cầu Giấy, Hà Nội </td>
-                                    <td>Kho thực phẩm</td>
-                                    <td>Kho vẫn sử dụng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHTX889</td>
-                                    <td>Kho hàng Thanh Xuân</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHDD668</td>
-                                    <td>Kho hàng Đống Đa</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHVT363</td>
-                                    <td>Kho hàng Vĩnh Tuy</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHHCM226</td>
-                                    <td>Kho hàng Hồ Chí Minh</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
+                                <c:forEach items="${products}" var="p">
+                                    <tr>
+                                        <td>${p.productCode}</td>
+                                        <td>${p.productName}</td>
+                                        <td>${p.productPrice} vnđ</td>
+                                        <td>${p.productQuantity}</td>
+                                        <td><img src="${p.productImg}" width="150" height="100" alt="loading"></td>
+                                        <td>${p.productInputDay}</td>
+                                        <td>${p.productExpiry}</td>
+                                        <td>${p.productTypes.productTypesName}</td>
+                                        <td>${p.productStatus}</td>
+                                        <td>${p.productDetail}</td>
+                                        <td>
+                                            <a type="button" class="btn btn-warning"
+                                               href="/edit-product?id=${p.productId}">Edit</a>
+                                            <a type="button" class="btn btn-danger" href="/delete?id=${p.productId} "
+                                               name="idProduct">Delete</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
 
                                 </tbody>
                             </table>

@@ -4,12 +4,12 @@ public class WarehouseTypes {
     private int warehouseTypesId;
     private String warehouseTypesCode;
     private String warehouseTypesName;
-    private boolean warehouseTypesStatus;
+    private int warehouseTypesStatus;
 
     public WarehouseTypes() {
     }
 
-    public WarehouseTypes(int warehouseTypesId, String warehouseTypesCode, String warehouseTypesName, boolean warehouseTypesStatus) {
+    public WarehouseTypes(int warehouseTypesId, String warehouseTypesCode, String warehouseTypesName, int warehouseTypesStatus) {
         this.warehouseTypesId = warehouseTypesId;
         this.warehouseTypesCode = warehouseTypesCode;
         this.warehouseTypesName = warehouseTypesName;
@@ -40,11 +40,11 @@ public class WarehouseTypes {
         this.warehouseTypesName = warehouseTypesName;
     }
 
-    public boolean isWarehouseTypesStatus() {
+    public int isWarehouseTypesStatus() {
         return warehouseTypesStatus;
     }
 
-    public void setWarehouseTypesStatus(boolean warehouseTypesStatus) {
+    public void setWarehouseTypesStatus(int warehouseTypesStatus) {
         this.warehouseTypesStatus = warehouseTypesStatus;
     }
 }

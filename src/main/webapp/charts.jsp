@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,7 +66,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
                     <a class="collapse-item" href="buttons.html">Khu vực kho hàng</a>
-                    <a class="collapse-item" href="cards.html">Thông tin nhập xuất kho</a>
+                    <a class="collapse-item" href="cards.jsp">Thông tin nhập xuất kho</a>
                 </div>
             </div>
         </li>
@@ -107,13 +108,13 @@
         <!--                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">-->
         <!--                    <div class="bg-white py-2 collapse-inner rounded">-->
         <!--                        <h6 class="collapse-header">Login Screens:</h6>-->
-        <!--                        <a class="collapse-item" href="login.html">Login</a>-->
+        <!--                        <a class="collapse-item" href="login.jsp">Login</a>-->
         <!--                        <a class="collapse-item" href="register.html">Register</a>-->
         <!--                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>-->
         <!--                        <div class="collapse-divider"></div>-->
         <!--                        <h6 class="collapse-header">Other Pages:</h6>-->
-        <!--                        <a class="collapse-item" href="404.html">404 Page</a>-->
-        <!--                        <a class="collapse-item" href="blank.html">Blank Page</a>-->
+        <!--                        <a class="collapse-item" href="404.jsp">404 Page</a>-->
+        <!--                        <a class="collapse-item" href="blank.jsp">Blank Page</a>-->
         <!--                    </div>-->
         <!--                </div>-->
         <!--            </li>-->
@@ -122,12 +123,12 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="/ShowProductsServlet">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Thực phẩm</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tables2.html">
+            <a class="nav-link" href="tables2.jsp">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Kho</span></a>
         </li>
@@ -501,7 +502,7 @@
             <div class="modal-body">Chọn "đăng xuất" nếu bạn thực sự muốn đăng xuất ra ngoài</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
-                <a class="btn btn-primary" href="login.html">Đăng xuất</a>
+                <a class="btn btn-primary" href="login.jsp">Đăng xuất</a>
             </div>
         </div>
     </div>
