@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +35,7 @@
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
 
-            <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh </div>
+            <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh</div>
         </a>
 
         <!-- Divider -->
@@ -113,7 +114,6 @@
         <!--                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>-->
         <!--                        <div class="collapse-divider"></div>-->
         <!--                        <h6 class="collapse-header">Other Pages:</h6>-->
-        <!--                        <a class="collapse-item" href="404.jsp">404 Page</a>-->
         <!--                        <a class="collapse-item" href="blank.jsp">Blank Page</a>-->
         <!--                    </div>-->
         <!--                </div>-->
@@ -140,7 +140,6 @@
         <div class="text-center d-none d-md-inline">
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
-
 
 
     </ul>
@@ -274,7 +273,8 @@
                                 </div>
                                 <div class="font-weight-bold">
                                     <div class="text-truncate">Hi there! I am wondering if you can help me with a
-                                        problem I've been having.</div>
+                                        problem I've been having.
+                                    </div>
                                     <div class="small text-gray-500">Emily Fowler · 58m</div>
                                 </div>
                             </a>
@@ -286,7 +286,8 @@
                                 </div>
                                 <div>
                                     <div class="text-truncate">I have the photos that you ordered last month, how
-                                        would you like them sent to you?</div>
+                                        would you like them sent to you?
+                                    </div>
                                     <div class="small text-gray-500">Jae Chun · 1d</div>
                                 </div>
                             </a>
@@ -298,7 +299,8 @@
                                 </div>
                                 <div>
                                     <div class="text-truncate">Last month's report looks great, I am very happy with
-                                        the progress so far, keep up the good work!</div>
+                                        the progress so far, keep up the good work!
+                                    </div>
                                     <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                 </div>
                             </a>
@@ -310,7 +312,8 @@
                                 </div>
                                 <div>
                                     <div class="text-truncate">Am I a good boy? The reason I ask is because someone
-                                        told me that people say this to all dogs, even if they aren't good...</div>
+                                        told me that people say this to all dogs, even if they aren't good...
+                                    </div>
                                     <div class="small text-gray-500">Chicken the Dog · 2w</div>
                                 </div>
                             </a>
@@ -371,89 +374,56 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                 <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
+                                    <th>Mã thực phẩm</th>
+                                    <th>Tên thực phẩm</th>
+                                    <th>Giá thực phẩm</th>
+                                    <th>Số lượng sản phẩm</th>
+                                    <th>Ảnh</th>
+                                    <th>Ngày nhập kho</th>
+                                    <th>Hạn sử dụng</th>
+                                    <th>Loại sản phẩm</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chi tiết</th>
                                     <th>Hành động</th>
-
                                 </tr>
                                 </thead>
                                 <tfoot>
                                 <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
+                                    <th>Mã thực phẩm</th>
+                                    <th>Tên thực phẩm</th>
+                                    <th>Giá thực phẩm</th>
+                                    <th>Số lượng sản phẩm</th>
+                                    <th>Ảnh</th>
+                                    <th>Ngày nhập kho</th>
+                                    <th>Hạn sử dụng</th>
+                                    <th>Loại thực phẩm</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chi tiết</th>
                                     <th>Hành động</th>
-
                                 </tr>
                                 </tfoot>
                                 <tbody>
-                                <tr>
-                                    <td>KHCG550</td>
-                                    <td>Kho hàng Cầu Giấy</td>
-                                    <td>Danh sách: </td>
-                                    <td>20 Xuân Thuỷ, Cầu Giấy, Hà Nội </td>
-                                    <td>Kho thực phẩm</td>
-                                    <td>Kho vẫn sử dụng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHTX889</td>
-                                    <td>Kho hàng Thanh Xuân</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHDD668</td>
-                                    <td>Kho hàng Đống Đa</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHVT363</td>
-                                    <td>Kho hàng Vĩnh Tuy</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHHCM226</td>
-                                    <td>Kho hàng Hồ Chí Minh</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
+                                <c:forEach items="${products}" var="p">
+                                    <tr>
+                                        <td>${p.productCode}</td>
+                                        <td>${p.productName}</td>
+                                        <td>${p.productPrice} vnđ</td>
+                                        <td>${p.productQuantity}</td>
+                                        <td><img src="${p.productImg}" width="150" height="100" alt="loading"></td>
+                                        <td>${p.productInputDay}</td>
+                                        <td>${p.productExpiry}</td>
+                                        <td>${p.productTypes.productTypesName}</td>
+                                        <td>${p.productStatus}</td>
+                                        <td>${p.productDetail}</td>
+                                        <td>
+                                            <a type="button" class="btn btn-warning"
+                                               href="/edit-product?id=${p.productId}">Edit</a>
+                                            <a type="button" class="btn btn-danger" href="/delete?id=${p.productId} "
+                                               name="idProduct">Delete</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+
 
                                 </tbody>
                             </table>
@@ -509,21 +479,22 @@
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/chart.js/Chart.min.js"></script>
+<script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
 
 <!-- Page level custom scripts -->
-<script src="js/demo/chart-area-demo.js"></script>
-<script src="js/demo/chart-pie-demo.js"></script>
+<script src="/js/demo/datatables-demo.js"></script>
 
 </body>
 

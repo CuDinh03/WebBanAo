@@ -1,6 +1,7 @@
 package com.example.quanlykho.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 public class Products {
     private int productId;
@@ -10,7 +11,7 @@ public class Products {
     private int productQuantity;
     private String productImg;
     private String productDetail;
-    private String productInputDay;
+    private Date productInputDay;
     private Date productExpiry;
     private ProductTypes productTypes;
     private int productStatus;
@@ -18,7 +19,7 @@ public class Products {
     public Products() {
     }
 
-    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, String productInputDay, Date productExpiry, ProductTypes productTypes, int productStatus) {
+    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry, ProductTypes productTypes, int productStatus) {
         this.productId = productId;
         this.productCode = productCode;
         this.productName = productName;
@@ -32,11 +33,11 @@ public class Products {
         this.productStatus = productStatus;
     }
 
-    public String getProductInputDay() {
+    public Date getProductInputDay() {
         return productInputDay;
     }
 
-    public void setProductInputDay(String productInputDay) {
+    public void setProductInputDay(Date productInputDay) {
         this.productInputDay = productInputDay;
     }
 
