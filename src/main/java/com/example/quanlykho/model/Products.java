@@ -13,13 +13,12 @@ public class Products {
     private String productDetail;
     private Date productInputDay;
     private Date productExpiry;
-    private ProductTypes productTypes;
     private int productStatus;
 
     public Products() {
     }
 
-    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry, ProductTypes productTypes, int productStatus) {
+    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry, int productStatus) {
         this.productId = productId;
         this.productCode = productCode;
         this.productName = productName;
@@ -29,7 +28,6 @@ public class Products {
         this.productDetail = productDetail;
         this.productInputDay = productInputDay;
         this.productExpiry = productExpiry;
-        this.productTypes = productTypes;
         this.productStatus = productStatus;
     }
 
@@ -95,14 +93,6 @@ public class Products {
 
     public void setProductExpiry(Date productExpiry) {
         this.productExpiry = productExpiry;
-    }
-
-    public ProductTypes getProductTypes() {
-        return productTypes;
-    }
-
-    public void setProductTypes(ProductTypes productTypes) {
-        this.productTypes = productTypes;
     }
 
     public int getProductStatus() {
