@@ -2,10 +2,15 @@ package com.example.quanlykho.controller;
 
 import com.example.quanlykho.dao.LoginDao;
 import com.example.quanlykho.model.Users;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
 
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet(name = "LoginServerlet", value = "/LoginServerlet")
@@ -27,7 +32,7 @@ String password = request.getParameter("password");
             session.setAttribute("userName",users.getUserName());
             session.setAttribute("passWord",users.getPassWord());
 
-            response.sendRedirect("/broad");
+            response.sendRedirect("/BroadServlet");
         }else {
             response.sendRedirect("/LoginServerlet");
         }

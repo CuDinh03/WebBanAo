@@ -42,7 +42,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Chào mừng bạn !</h1>
                                     </div>
-                                    <form class="user">
+                                    <form method="post" action="LoginServerlet" class="user">
                                         <div class="form-group">
                                             <input type="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
@@ -59,14 +59,14 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <a href="/BroadServlet" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                         <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
+                                        <a href="index.jsp" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
                                         </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
+                                        <a href="index.jsp" class="btn btn-facebook btn-user btn-block">
                                             <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                         </a>
                                     </form>

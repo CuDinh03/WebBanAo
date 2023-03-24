@@ -348,7 +348,6 @@
                                     <th>Ảnh</th>
                                     <th>Ngày nhập kho</th>
                                     <th>Hạn sử dụng</th>
-                                    <th>Loại sản phẩm</th>
                                     <th>Trạng thái</th>
                                     <th>Chi tiết</th>
                                     <th>Hành động</th>
@@ -363,7 +362,6 @@
                                     <th>Ảnh</th>
                                     <th>Ngày nhập kho</th>
                                     <th>Hạn sử dụng</th>
-                                    <th>Loại thực phẩm</th>
                                     <th>Trạng thái</th>
                                     <th>Chi tiết</th>
                                     <th>Hành động</th>
@@ -379,7 +377,6 @@
                                         <td><img src="${p.productImg}" width="150" height="100" alt="loading"></td>
                                         <td>${p.productInputDay}</td>
                                         <td>${p.productExpiry}</td>
-                                        <td>${p.productTypes.productTypesName}</td>
                                         <td>${p.productStatus}</td>
                                         <td>${p.productDetail}</td>
                                         <td>
