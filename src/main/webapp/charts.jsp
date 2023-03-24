@@ -113,7 +113,6 @@
         <!--                        <a class="collapse-item" href="forgot-password.html">Forgot Password</a>-->
         <!--                        <div class="collapse-divider"></div>-->
         <!--                        <h6 class="collapse-header">Other Pages:</h6>-->
-        <!--                        <a class="collapse-item" href="404.jsp">404 Page</a>-->
         <!--                        <a class="collapse-item" href="blank.jsp">Blank Page</a>-->
         <!--                    </div>-->
         <!--                </div>-->
