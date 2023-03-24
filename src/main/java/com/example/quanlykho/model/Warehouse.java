@@ -7,19 +7,17 @@ public class Warehouse {
     private Products products;
     private String wareHouseLocation;
     private int wareHouseStatus;
-    private WarehouseTypes warehouseTypes;
 
     public Warehouse() {
     }
 
-    public Warehouse(int wareHouseId, String wareHouseCode, String wareHouseName, Products products, String wareHouseLocation, int wareHouseStatus, WarehouseTypes warehouseTypes) {
+    public Warehouse(int wareHouseId, String wareHouseCode, String wareHouseName, Products products, String wareHouseLocation, int wareHouseStatus) {
         this.wareHouseId = wareHouseId;
         this.wareHouseCode = wareHouseCode;
         this.wareHouseName = wareHouseName;
         this.products = products;
         this.wareHouseLocation = wareHouseLocation;
         this.wareHouseStatus = wareHouseStatus;
-        this.warehouseTypes = warehouseTypes;
     }
 
     public int getWareHouseId() {
@@ -70,11 +68,5 @@ public class Warehouse {
         this.wareHouseStatus = wareHouseStatus;
     }
 
-    public WarehouseTypes getWarehouseTypes() {
-        return warehouseTypes;
-    }
 
-    public void setWarehouseTypes(WarehouseTypes warehouseTypes) {
-        this.warehouseTypes = warehouseTypes;
-    }
 }
