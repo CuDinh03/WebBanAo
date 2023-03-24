@@ -59,7 +59,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="/BroadServlet" class="btn btn-primary btn-user btn-block">
+                                        <a href="/index.jsp" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                         <hr>
