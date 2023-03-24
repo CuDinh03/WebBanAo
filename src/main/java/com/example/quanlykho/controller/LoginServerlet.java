@@ -31,7 +31,6 @@ String password = request.getParameter("password");
             session.setAttribute("id",users.getId());
             session.setAttribute("userName",users.getUserName());
             session.setAttribute("passWord",users.getPassWord());
-
             response.sendRedirect("/BroadServlet");
         }else {
             response.sendRedirect("/LoginServerlet");
