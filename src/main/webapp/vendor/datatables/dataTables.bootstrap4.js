@@ -87,6 +87,7 @@ DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, bu
 				attach( container, button );
 			}
 			else {
+				// No matching records found
 				btnDisplay = '';
 				btnClass = '';
 
