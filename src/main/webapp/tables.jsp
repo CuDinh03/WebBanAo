@@ -331,8 +331,9 @@
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Danh sách toàn bộ thực phẩm có trong kho
-                            <a type="button" class="btn btn-info" href="/edit-product?id=${p.productId}">Thêm mới</a>
-
+                            <a class="btn btn-info" type="button" data-toggle="modal" data-target="#createModal">
+                                Thêm mới
+                            </a>
                         </h6>
 
                     </div>
@@ -382,10 +383,34 @@
                                         <td>
                                             <a type="button" class="btn btn-warning"
                                                href="/edit-product?id=${p.productId}">Edit</a>
-                                            <a type="button" class="btn btn-danger" href="/delete?id=${p.productId} "
-                                               name="idProduct">Delete</a>
+                                            <a class="btn btn-danger" type="button" data-toggle="modal" data-target="#deleteModal">
+                                                Xoá
+                                            </a>
                                         </td>
                                     </tr>
+
+                                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalProduct"
+                                         aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="deleteModalProduct">Xác nhận xoá sản phẩm </h5>
+                                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                    <%--            nội dung xoá sản phẩm --%>
+                                                <div class="modal-body">
+                                                    <p>Bạn chắc chắn muốn xoá sản phẩm này chứ ?</p>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
+                                                    <a class="btn btn-danger" href="/delete?id=${p.productId} ">Xoá</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </c:forEach>
 
                                 </tbody>
@@ -435,11 +460,41 @@
             <div class="modal-body">Chọn "đăng xuất" nếu bạn thực sự muốn đăng xuất ra ngoài</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
-                <a class="btn btn-primary" href="login.jsp">Đăng xuất</a>
+                <a class="btn btn-primary" href="/logout">Đăng xuất</a>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Create Modal-->
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalProduct"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createModalProduct">Thêm mới sản phẩm</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+<%--            nội dung thêm sản phẩm --%>
+            <div class="modal-body">
+
+            <p>Tên sản phẩm</p>
+                <input type="text">
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
+                <a class="btn btn-primary" href="/CreateProductServlet">Thêm</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Modal-->
+
+
 
 <!-- Bootstrap core JavaScript-->
 

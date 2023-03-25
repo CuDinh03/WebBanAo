@@ -10,19 +10,19 @@ import java.sql.SQLException;
 public class LoginDao {
     public  static Users login(String username , String password){
         try {
-            String sql = "select * from users where username = ? and password = ?";
+            String sql = "select * from users where userName = ? and passWord = ?";
             Connection connection = Connect_sql.getConnect();
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,username);
-            preparedStatement.setString(1,password);
+            preparedStatement.setString(2,password);
 
             ResultSet resultSet = preparedStatement.executeQuery();
             Users users = null;
 
             if (resultSet.next()){
-                int idUser1 = resultSet.getInt(1);
-                String username1 = resultSet.getString(2);
-                String password1 = resultSet.getString(3);
+                int idUser1 = resultSet.getInt("id");
+                String username1 = resultSet.getString("userName");
+                String password1 = resultSet.getString("passWord");
                 users = new Users(idUser1,username1,password1);
             }
             return users;
