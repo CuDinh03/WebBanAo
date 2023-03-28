@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-@WebFilter(urlPatterns = {"/CreateProductServlet","/logout","/EditServlet","/ShowProductsServlet","/index.jsp","/tables2.jsp"})
+@WebFilter(urlPatterns = {"/index.jsp"})
 public class UserFilter extends HttpFilter {
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException, IOException, ServletException {

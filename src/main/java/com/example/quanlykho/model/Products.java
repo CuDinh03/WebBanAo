@@ -31,6 +31,31 @@ public class Products {
         this.productStatus = productStatus;
     }
 
+    public Products(String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry, int productStatus) {
+        this.productCode = productCode;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productQuantity = productQuantity;
+        this.productImg = productImg;
+        this.productDetail = productDetail;
+        this.productInputDay = productInputDay;
+        this.productExpiry = productExpiry;
+        this.productStatus = productStatus;
+
+    }
+
+    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry) {
+        this.productId = productId;
+        this.productCode = productCode;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productQuantity = productQuantity;
+        this.productImg = productImg;
+        this.productDetail = productDetail;
+        this.productInputDay = productInputDay;
+        this.productExpiry = productExpiry;
+    }
+
     public Date getProductInputDay() {
         return productInputDay;
     }

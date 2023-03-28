@@ -128,7 +128,7 @@
                 <span>Thực phẩm</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tables2.jsp">
+            <a class="nav-link" href="/ShowProductsServlet">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Kho</span></a>
         </li>
@@ -355,84 +355,6 @@
             </nav>
             <!-- End of Topbar -->
 
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Danh sách kho</h1>
-                <!-- DataTales Example -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Danh sách toàn bộ thực phẩm có trong kho
-                            <a type="button" class="btn btn-info" href="/edit-product?id=${p.idProduct}">Thêm mới</a>
-
-                        </h6>
-
-                    </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th>Mã thực phẩm</th>
-                                    <th>Tên thực phẩm</th>
-                                    <th>Giá thực phẩm</th>
-                                    <th>Số lượng sản phẩm</th>
-                                    <th>Ảnh</th>
-                                    <th>Ngày nhập kho</th>
-                                    <th>Hạn sử dụng</th>
-                                    <th>Loại sản phẩm</th>
-                                    <th>Trạng thái</th>
-                                    <th>Chi tiết</th>
-                                    <th>Hành động</th>
-                                </tr>
-                                </thead>
-                                <tfoot>
-                                <tr>
-                                    <th>Mã thực phẩm</th>
-                                    <th>Tên thực phẩm</th>
-                                    <th>Giá thực phẩm</th>
-                                    <th>Số lượng sản phẩm</th>
-                                    <th>Ảnh</th>
-                                    <th>Ngày nhập kho</th>
-                                    <th>Hạn sử dụng</th>
-                                    <th>Loại thực phẩm</th>
-                                    <th>Trạng thái</th>
-                                    <th>Chi tiết</th>
-                                    <th>Hành động</th>
-                                </tr>
-                                </tfoot>
-                                <tbody>
-                                <c:forEach items="${products}" var="p">
-                                    <tr>
-                                        <td>${p.productCode}</td>
-                                        <td>${p.productName}</td>
-                                        <td>${p.productPrice} vnđ</td>
-                                        <td>${p.productQuantity}</td>
-                                        <td><img src="${p.productImg}" width="150" height="100" alt="loading"></td>
-                                        <td>${p.productInputDay}</td>
-                                        <td>${p.productExpiry}</td>
-                                        <td>${p.productTypes.productTypesName}</td>
-                                        <td>${p.productStatus}</td>
-                                        <td>${p.productDetail}</td>
-                                        <td>
-                                            <a type="button" class="btn btn-warning"
-                                               href="/edit-product?id=${p.productId}">Edit</a>
-                                            <a type="button" class="btn btn-danger" href="/delete?id=${p.productId} "
-                                               name="idProduct">Delete</a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- /.container-fluid -->
 
         </div>
         <!-- End of Main Content -->
