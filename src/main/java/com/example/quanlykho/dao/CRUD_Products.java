@@ -45,7 +45,7 @@ public class CRUD_Products {
 
     public static void save(Products products) {
         try {
-            String sql = " insert into product(productCode,productName,productPrice,productQuantity,productImg,productDetail,productInputDay,productExpiry,productStatus) values (?,?,?,?,?,?,?,?,1) ";
+            String sql = " insert into products(productCode,productName,productPrice,productQuantity,productImg,productDetail,productInputDay,productExpiry,productStatus) values (?,?,?,?,?,?,?,?,1) ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, products.getProductCode());
             preparedStatement.setString(2, products.getProductName());
@@ -72,7 +72,7 @@ public class CRUD_Products {
         }
     }
 
-    public static void edit(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry, int productTypes){
+    public static void edit(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry){
     try{
         String sql = "UPDATE products SET productCode = ? , productName = ? , productPrice = ? , productQuantity = ? , productImg = ? , productDetail = ? , productInputDay = ? , productExpiry = ? WHERE productId = ?  ";
         PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -88,5 +88,33 @@ public class CRUD_Products {
     }catch (SQLException throwables){
         throwables.printStackTrace();
     }
+    }
+
+    public Products getSingleProduct(int id) {
+        Products row = null;
+        try {
+            String query = "select * from products where productId=? ";
+
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1, id);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                row = new Products();
+                row.setProductId(rs.getInt("productId"));
+                row.setProductCode(rs.getString("productCode"));
+                row.setProductName(rs.getString( "productName"));
+                row.setProductPrice(Double.parseDouble(rs.getString( "productPrice")));
+                row.setProductQuantity(Integer.parseInt(rs.getString( "productQuantity")));
+                row.setProductImg(rs.getString( "productImg"));
+                row.setProductDetail(rs.getString( "productDetail"));
+                row.setProductInputDay(Date.valueOf(rs.getString( "productInputDay")));
+                row.setProductExpiry(Date.valueOf( rs.getString( "productExpiry")));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return row;
     }
 }
