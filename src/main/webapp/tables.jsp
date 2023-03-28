@@ -42,7 +42,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/BroadServlet">
 
             <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh</div>
         </a>
@@ -52,7 +52,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-            <a class="nav-link" href="index.html">
+            <a class="nav-link" href="/BroadServlet">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Trang chủ</span></a>
         </li>
@@ -331,8 +331,9 @@
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Danh sách toàn bộ thực phẩm có trong kho
-                            <a type="button" class="btn btn-info" href="/edit-product?id=${p.productId}">Thêm mới</a>
-
+                            <a class="btn btn-info" type="button" data-toggle="modal" data-target="#createModal">
+                                Thêm mới
+                            </a>
                         </h6>
 
                     </div>
@@ -381,11 +382,43 @@
                                         <td>${p.productDetail}</td>
                                         <td>
                                             <a type="button" class="btn btn-warning"
-                                               href="/edit-product?id=${p.productId}">Edit</a>
-                                            <a type="button" class="btn btn-danger" href="/delete?id=${p.productId} "
-                                               name="idProduct">Delete</a>
+                                               href="/EditServlet?id=${p.productId}">Edit</a>
+<%--                                            <a class="btn btn-danger" type="button" data-toggle="modal"--%>
+<%--                                               data-target="#deleteModal">--%>
+<%--                                                Xoá--%>
+<%--                                            </a>--%>
+                                            <a type="button" class="btn btn-danger" href="/delete?id=${p.productId} ">Xoá</a>
                                         </td>
                                     </tr>
+
+                                    <!-- Delete Modal-->
+
+<%--                                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"--%>
+<%--                                         aria-labelledby="deleteModalProduct"--%>
+<%--                                         aria-hidden="true">--%>
+<%--                                        <div class="modal-dialog" role="document">--%>
+<%--                                            <div class="modal-content">--%>
+<%--                                                <div class="modal-header">--%>
+<%--                                                    <h5 class="modal-title" id="deleteModalProduct">Xác nhận xoá sản--%>
+<%--                                                        phẩm </h5>--%>
+<%--                                                    <button class="close" type="button" data-dismiss="modal"--%>
+<%--                                                            aria-label="Close">--%>
+<%--                                                        <span aria-hidden="true">×</span>--%>
+<%--                                                    </button>--%>
+<%--                                                </div>--%>
+<%--                                                    &lt;%&ndash;            nội dung xoá sản phẩm &ndash;%&gt;--%>
+<%--                                                <div class="modal-body">--%>
+<%--                                                    <p>Bạn chắc chắn muốn xoá sản phẩm này chứ ?</p>--%>
+
+<%--                                                </div>--%>
+<%--                                                <div class="modal-footer">--%>
+<%--                                                    <button class="btn btn-secondary" type="button"--%>
+<%--                                                            data-dismiss="modal">Huỷ--%>
+<%--                                                    </button>--%>
+<%--                                                </div>--%>
+<%--                                            </div>--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
                                 </c:forEach>
 
                                 </tbody>
@@ -435,11 +468,57 @@
             <div class="modal-body">Chọn "đăng xuất" nếu bạn thực sự muốn đăng xuất ra ngoài</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
-                <a class="btn btn-primary" href="login.jsp">Đăng xuất</a>
+                <a class="btn btn-primary" href="/logout">Đăng xuất</a>
             </div>
         </div>
     </div>
 </div>
+
+<form action="/CreateProductServlet" method="post">
+<!-- Create Modal-->
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalProduct"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="createModalProduct">Thêm mới sản phẩm</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <%--            nội dung thêm sản phẩm --%>
+
+                <div class="modal-body">
+
+                    <p class="text-dark text-md-left">Mã thực phẩm</p>
+                    <input class="form-control" type="text" name="prCode">
+                    <p class="text-dark text-md-left">Tên sản phẩm</p>
+                    <input class="form-control" type="text" name="prName">
+                    <p class="text-dark text-md-left">Giá thực phẩm</p>
+                    <input class="form-control "  type="text" name="prPrice">
+                    <p class="text-dark text-md-left">Số lượng sản phẩm</p>
+                    <input class="form-control" type="text" name="prQuantity">
+                    <p class="text-dark text-md-left">Ảnh</p>
+                    <input class="form-control" type="text" name="prImg">
+                    <p class="text-dark text-md-left">Ngày nhập kho</p>
+                    <input class="form-control" type="date" name="prDateInput">
+                    <p class="text-dark text-md-left">Hạn sử dụng</p>
+                    <input class="form-control" type="date" name="prDateEx">
+                    <p class="text-dark text-md-left">Chi tiết</p>
+                    <input class="form-control" type="text" name="prDetail">
+
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
+                    <button class="btn btn-primary" type="submit" formmethod="post">Thêm</button>
+                </div>
+        </div>
+    </div>
+</div>
+</form>
+
+
 
 <!-- Bootstrap core JavaScript-->
 
