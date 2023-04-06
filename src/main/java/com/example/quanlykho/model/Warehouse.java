@@ -4,22 +4,20 @@ public class Warehouse {
     private int wareHouseId;
     private String wareHouseCode;
     private String wareHouseName;
-    private Products products;
+//    private Products products;
     private String wareHouseLocation;
     private int wareHouseStatus;
-    private WarehouseTypes warehouseTypes;
 
     public Warehouse() {
     }
 
-    public Warehouse(int wareHouseId, String wareHouseCode, String wareHouseName, Products products, String wareHouseLocation, int wareHouseStatus, WarehouseTypes warehouseTypes) {
+    public Warehouse(int wareHouseId, String wareHouseCode, String wareHouseName, Products products, String wareHouseLocation, int wareHouseStatus) {
         this.wareHouseId = wareHouseId;
         this.wareHouseCode = wareHouseCode;
         this.wareHouseName = wareHouseName;
-        this.products = products;
+//        this.products = products;
         this.wareHouseLocation = wareHouseLocation;
         this.wareHouseStatus = wareHouseStatus;
-        this.warehouseTypes = warehouseTypes;
     }
 
     public int getWareHouseId() {
@@ -46,13 +44,13 @@ public class Warehouse {
         this.wareHouseName = wareHouseName;
     }
 
-    public Products getProducts() {
-        return products;
-    }
+//    public Products getProducts() {
+//        return products;
+//    }
 
-    public void setProducts(Products products) {
-        this.products = products;
-    }
+//    public void setProducts(Products products) {
+//        this.products = products;
+//    }
 
     public String getWareHouseLocation() {
         return wareHouseLocation;
@@ -70,11 +68,5 @@ public class Warehouse {
         this.wareHouseStatus = wareHouseStatus;
     }
 
-    public WarehouseTypes getWarehouseTypes() {
-        return warehouseTypes;
-    }
 
-    public void setWarehouseTypes(WarehouseTypes warehouseTypes) {
-        this.warehouseTypes = warehouseTypes;
-    }
 }
