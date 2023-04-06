@@ -501,7 +501,7 @@
             <div class="modal-body">Chọn "đăng xuất" nếu bạn thực sự muốn đăng xuất ra ngoài</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
-                <a class="btn btn-primary" href="login.jsp">Đăng xuất</a>
+                <a class="btn btn-primary" href="/logout">Đăng xuất</a>
             </div>
         </div>
     </div>

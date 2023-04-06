@@ -33,7 +33,7 @@
   <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/BroadServlet">
 
       <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh</div>
     </a>

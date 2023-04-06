@@ -32,7 +32,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/BroadServlet">
 
             <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh </div>
         </a>
@@ -502,7 +502,7 @@
             <div class="modal-body">Chọn "đăng xuất" nếu bạn thực sự muốn đăng xuất ra ngoài</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
-                <a class="btn btn-primary" href="login.jsp">Đăng xuất</a>
+                <a class="btn btn-primary" href="/logout">Đăng xuất</a>
             </div>
         </div>
     </div>
