@@ -2,11 +2,12 @@ package com.example.quanlykho.controller;
 
 import com.example.quanlykho.dao.CRUD_Products;
 import com.example.quanlykho.model.Products;
-import com.example.quanlykho.service.ProductService;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
 
@@ -24,10 +25,10 @@ public class EditServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id1"));
-        String productCode = request.getParameter("prCode");
-        String productName = request.getParameter("prName");
-        double productPrice= Double.parseDouble(request.getParameter("prPrice"));
-        int productQuantity = Integer.parseInt(request.getParameter("prQuantity"));
+        String productCode = request.getParameter("prCode1");
+        String productName = request.getParameter("prName1");
+        double productPrice= Double.parseDouble(request.getParameter("prPrice1"));
+        int productQuantity = Integer.parseInt(request.getParameter("prQuantity1"));
         String productImg =  request.getParameter("prImg");
         String productDetail = request.getParameter("prDetail");
         Date productInputDay = Date.valueOf(request.getParameter("prDateInput"));
@@ -35,6 +36,6 @@ public class EditServlet extends HttpServlet {
 
 
         CRUD_Products.edit(id,productCode,productName,productPrice,productQuantity,productImg,productDetail,productInputDay,productExpiry);
-        response.sendRedirect("/ProductServlet");
+        response.sendRedirect("/ShowProductsServlet");
     }
 }

@@ -18,7 +18,7 @@ public class UserFilter extends HttpFilter {
         HttpSession session = req.getSession();
         Users users = (Users) session.getAttribute("user");
         if (users == null) {
-            res.sendRedirect("/LoginServerlet");
+            res.sendRedirect("/LoginServlet");
         }else {
             chain.doFilter(req,res);
         }

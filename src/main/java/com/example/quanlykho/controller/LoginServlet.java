@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServerlet", value = "/LoginServerlet")
-public class LoginServerlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", value = "/LoginServlet")
+public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
@@ -30,7 +30,7 @@ public class LoginServerlet extends HttpServlet {
             session.setAttribute("passWord",users.getPassWord());
             response.sendRedirect("/BroadServlet");
         }else {
-            response.sendRedirect("/LoginServerlet");
+            response.sendRedirect("/LoginServlet");
         }
     }
 }

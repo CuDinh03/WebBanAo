@@ -1,10 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -20,6 +21,8 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+
 
 </head>
 
@@ -355,110 +358,95 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Danh sách kho</h1>
-                <!-- DataTales Example -->
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Danh sách toàn bộ thực phẩm có trong kho
-                            <a type="button" class="btn btn-info" href="/edit-product?id=${p.idProduct}">Thêm mới</a>
+                <h1 class="h3 mb-2 text-gray-800">Thông tin nhập xuất kho</h1>
 
-                        </h6>
-
+                <div class="container">
+                    <div class="title">
+                        <h2>Product Order Form</h2>
                     </div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
+                    <div class="d-flex">
+                        <form action="" method="">
+                            <label>
+                                <span class="fname">First Name <span class="required">*</span></span>
+                                <input type="text" name="fname">
+                            </label>
+                            <label>
+                                <span class="lname">Last Name <span class="required">*</span></span>
+                                <input type="text" name="lname">
+                            </label>
+                            <label>
+                                <span>Company Name (Optional)</span>
+                                <input type="text" name="cn">
+                            </label>
+                            <label>
+                                <span>Country <span class="required">*</span></span>
+                            </label>
+                            <label>
+                                <span>Street Address <span class="required">*</span></span>
+                                <input type="text" name="houseadd" placeholder="House number and street name" required>
+                            </label>
+                            <label>
+                                <span>&nbsp;</span>
+                                <input type="text" name="apartment" placeholder="Apartment, suite, unit etc. (optional)">
+                            </label>
+                            <label>
+                                <span>Town / City <span class="required">*</span></span>
+                                <input type="text" name="city">
+                            </label>
+                            <label>
+                                <span>State / County <span class="required">*</span></span>
+                                <input type="text" name="city">
+                            </label>
+                            <label>
+                                <span>Postcode / ZIP <span class="required">*</span></span>
+                                <input type="text" name="city">
+                            </label>
+                            <label>
+                                <span>Phone <span class="required">*</span></span>
+                                <input type="tel" name="city">
+                            </label>
+                            <label>
+                                <span>Email Address <span class="required">*</span></span>
+                                <input type="email" name="city">
+                            </label>
+                        </form>
+                        <div class="Yorder">
+                            <table>
                                 <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
-                                    <th>Hành động</th>
-
-                                </tr>
-                                </thead>
-                                <tfoot>
-                                <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
-                                    <th>Hành động</th>
-
-                                </tr>
-                                </tfoot>
-                                <tbody>
-                                <tr>
-                                    <td>KHCG550</td>
-                                    <td>Kho hàng Cầu Giấy</td>
-                                    <td>Danh sách: </td>
-                                    <td>20 Xuân Thuỷ, Cầu Giấy, Hà Nội </td>
-                                    <td>Kho thực phẩm</td>
-                                    <td>Kho vẫn sử dụng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHTX889</td>
-                                    <td>Kho hàng Thanh Xuân</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHDD668</td>
-                                    <td>Kho hàng Đống Đa</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
+                                    <th colspan="2">Your order</th>
                                 </tr>
                                 <tr>
-                                    <td>KHVT363</td>
-                                    <td>Kho hàng Vĩnh Tuy</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
+                                    <td>Product Name x 2(Qty)</td>
+                                    <td>$88.00</td>
                                 </tr>
                                 <tr>
-                                    <td>KHHCM226</td>
-                                    <td>Kho hàng Hồ Chí Minh</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
+                                    <td>Subtotal</td>
+                                    <td>$88.00</td>
                                 </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
+                                <tr>
+                                    <td>Shipping</td>
+                                    <td>Free shipping</td>
+                                </tr>
+                            </table><br>
+                            <div>
+                                <input type="radio" name="dbt" value="dbt" checked> Direct Bank Transfer
+                            </div>
+                            <p>
+                                Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.
+                            </p>
+                            <div>
+                                <input type="radio" name="dbt" value="cd"> Cash on Delivery
+                            </div>
+                            <div>
+                                <input type="radio" name="dbt" value="cd"> Paypal <span>
+      <img src="https://www.logolynx.com/images/logolynx/c3/c36093ca9fb6c250f74d319550acac4d.jpeg" alt="" width="50">
+      </span>
+                            </div>
+                            <button type="button">Place Order</button>
+                        </div><!-- Yorder -->
                     </div>
                 </div>
+                <!-- DataTales Example -->
 
             </div>
             <!-- /.container-fluid -->
@@ -523,7 +511,7 @@
 <!-- Page level custom scripts -->
 <script src="js/demo/chart-area-demo.js"></script>
 <script src="js/demo/chart-pie-demo.js"></script>
-
+<style href="/webapp/css/style.css"></style>
 </body>
 
 </html>
