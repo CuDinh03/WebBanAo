@@ -6,7 +6,7 @@
   Time: 15:54
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 
 <!DOCTYPE html>
@@ -14,7 +14,8 @@
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -30,6 +31,8 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -75,8 +78,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
-                    <a class="collapse-item" href="buttons.jsp">Khu vực kho hàng</a>
-                    <a class="collapse-item" href="cards.jsp">Thông tin nhập xuất kho</a>
+                    <a class="collapse-item" href="historyExport.jsp">Khu vực kho hàng</a>
+                    <a class="collapse-item" href="/ImportExportServlet">Thông tin nhập xuất kho</a>
                 </div>
             </div>
         </li>
@@ -378,47 +381,41 @@
                                         <td><img src="${p.productImg}" width="150" height="100" alt="loading"></td>
                                         <td>${p.productInputDay}</td>
                                         <td>${p.productExpiry}</td>
-                                        <td>${p.productStatus}</td>
+<%--                                        <c:if test="${p.productStatus == 1} ">--%>
+                                        <td>Còn hàng</td>
+<%--                                        </c:if>--%>
                                         <td>${p.productDetail}</td>
                                         <td>
                                             <a type="button" class="btn btn-warning"
                                                href="/EditServlet?id=${p.productId}">Edit</a>
-<%--                                            <a class="btn btn-danger" type="button" data-toggle="modal"--%>
-<%--                                               data-target="#deleteModal">--%>
-<%--                                                Xoá--%>
-<%--                                            </a>--%>
-                                            <a type="button" class="btn btn-danger" href="/delete?id=${p.productId} ">Xoá</a>
+
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal${p.productId}">
+                                                Xoá
+                                            </button>
+                                            <!-- Confirm Delete Modal -->
+                                            <div class="modal fade" id="confirmDeleteModal${p.productId}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="confirmDeleteModalLabel${p.productId}">Xác nhận xóa sản phẩm</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn có chắc chắn muốn xóa sản phẩm này không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
+                                                            <a type="button" class="btn btn-danger" href="/delete?id=${p.productId} ">Xoá</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </td>
                                     </tr>
-
-                                    <!-- Delete Modal-->
-
-<%--                                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog"--%>
-<%--                                         aria-labelledby="deleteModalProduct"--%>
-<%--                                         aria-hidden="true">--%>
-<%--                                        <div class="modal-dialog" role="document">--%>
-<%--                                            <div class="modal-content">--%>
-<%--                                                <div class="modal-header">--%>
-<%--                                                    <h5 class="modal-title" id="deleteModalProduct">Xác nhận xoá sản--%>
-<%--                                                        phẩm </h5>--%>
-<%--                                                    <button class="close" type="button" data-dismiss="modal"--%>
-<%--                                                            aria-label="Close">--%>
-<%--                                                        <span aria-hidden="true">×</span>--%>
-<%--                                                    </button>--%>
-<%--                                                </div>--%>
-<%--                                                    &lt;%&ndash;            nội dung xoá sản phẩm &ndash;%&gt;--%>
-<%--                                                <div class="modal-body">--%>
-<%--                                                    <p>Bạn chắc chắn muốn xoá sản phẩm này chứ ?</p>--%>
-
-<%--                                                </div>--%>
-<%--                                                <div class="modal-footer">--%>
-<%--                                                    <button class="btn btn-secondary" type="button"--%>
-<%--                                                            data-dismiss="modal">Huỷ--%>
-<%--                                                    </button>--%>
-<%--                                                </div>--%>
-<%--                                            </div>--%>
-<%--                                        </div>--%>
-<%--                                    </div>--%>
                                 </c:forEach>
 
                                 </tbody>
@@ -454,6 +451,11 @@
     <i class="fas fa-angle-up"></i>
 </a>
 
+
+
+
+
+
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
@@ -474,7 +476,7 @@
     </div>
 </div>
 
-<form action="/CreateProductServlet" method="post">
+<form action="/CreateProductServlet" method="post" accept-charset="UTF-8">
 <!-- Create Modal-->
 <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalProduct"
      aria-hidden="true">
@@ -490,33 +492,86 @@
 
                 <div class="modal-body">
 
-                    <p class="text-dark text-md-left">Mã thực phẩm</p>
-                    <input class="form-control" type="text" name="prCode">
-                    <p class="text-dark text-md-left">Tên sản phẩm</p>
-                    <input class="form-control" type="text" name="prName">
-                    <p class="text-dark text-md-left">Giá thực phẩm</p>
-                    <input class="form-control "  type="text" name="prPrice">
-                    <p class="text-dark text-md-left">Số lượng sản phẩm</p>
-                    <input class="form-control" type="text" name="prQuantity">
-                    <p class="text-dark text-md-left">Ảnh</p>
-                    <input class="form-control" type="text" name="prImg">
-                    <p class="text-dark text-md-left">Ngày nhập kho</p>
-                    <input class="form-control" type="date" name="prDateInput">
-                    <p class="text-dark text-md-left">Hạn sử dụng</p>
-                    <input class="form-control" type="date" name="prDateEx">
-                    <p class="text-dark text-md-left">Chi tiết</p>
-                    <input class="form-control" type="text" name="prDetail">
+
+                        <p class="text-dark text-md-left">Mã thực phẩm</p>
+                        <input class="form-control" type="text" name="prCode" required>
+
+                        <p class="text-dark text-md-left">Tên sản phẩm</p>
+                        <input class="form-control" type="text" name="prName" required>
+
+                        <p class="text-dark text-md-left">Giá thực phẩm</p>
+                        <input class="form-control" type="number" name="prPrice" required>
+
+                        <p class="text-dark text-md-left">Số lượng sản phẩm</p>
+                        <input class="form-control" type="number" name="prQuantity" required>
+
+                        <p class="text-dark text-md-left">Ảnh</p>
+                        <input class="form-control" type="text" name="prImg">
+
+                        <p class="text-dark text-md-left">Ngày nhập kho</p>
+                        <input class="form-control" type="date" name="prDateInput" required>
+
+                        <p class="text-dark text-md-left">Hạn sử dụng</p>
+                        <input class="form-control" type="date" name="prDateEx" required>
+
+                        <p class="text-dark text-md-left">Chi tiết</p>
+                        <textarea class="form-control" name="prDetail" required></textarea>
+
 
 
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
-                    <button class="btn btn-primary" type="submit" formmethod="post">Thêm</button>
+                    <button class="btn btn-primary" type="submit" id="addProductBtn" formmethod="post">Thêm</button>
                 </div>
         </div>
     </div>
 </div>
 </form>
+
+
+<script>
+    $(document).ready(function() {
+        <%-- Xử lý khi thêm sản phẩm thành công --%>
+        var successMsg = '<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999">' +
+            '<strong>Thêm sản phẩm thành công!</strong>' +
+            '<a href="/ShowProductsServlet" type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<span aria-hidden="true">&times;</span>' +
+            '</a>' +
+            '</div>';
+
+        <%-- Xử lý khi thêm sản phẩm không thành công --%>
+        var errorMsg = '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999">' +
+            '<strong>Thêm sản phẩm không thành công!</strong>' +
+            '<a href="/ShowProductsServlet" type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<span aria-hidden="true">&times;</span>' +
+            '</a>' +
+            '</div>';
+
+        <%-- Thêm xử lý submit form --%>
+        $("#addProductBtn").click(function(event) {
+            event.preventDefault(); // Ngăn chặn việc submit form mặc định
+
+            $.ajax({
+                type: "POST",
+                url: "/CreateProductServlet",
+                data: $('form').serialize(),
+                success: function(data) {
+                    $('#createModal').modal('hide'); // Ẩn modal khi thêm sản phẩm thành công
+                    $('body').append(successMsg); // Thêm thông báo thành công vào body
+                },
+                error: function() {
+                    $('#createModal').modal('hide'); // Ẩn modal khi thêm sản phẩm không thành công
+                    $('body').append(errorMsg); // Thêm thông báo không thành công vào body
+                }
+            });
+        });
+    });
+
+
+
+</script>
+
 
 
 

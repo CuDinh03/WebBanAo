@@ -30,4 +30,16 @@ public class ProductService implements IService<Products>{
     public Products findById(int id) {
         return null;
     }
+
+    public void changeQuantity(int quantity, String prCode ){
+        for (Products p:
+             CRUD_Products.getAll()) {
+            if (p.getProductCode().equals(prCode)){
+                int quantity1 = p.getProductQuantity();
+                p.setProductQuantity(quantity1-quantity);
+                CRUD_Products.editQuantity(prCode,p.getProductQuantity());
+                break;
+            }
+        }
+    }
 }

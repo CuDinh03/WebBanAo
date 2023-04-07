@@ -18,12 +18,10 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
         try {
-            if(request.getSession().getAttribute("nameuser")!=null) {
+            if(request.getSession().getAttribute("user")!=null) {
                 HttpSession session = request.getSession();
-
                 session.invalidate();
-
-                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/LoginServerlet");
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/LoginServlet");
                 dispatcher.forward(request,response);
             }
 

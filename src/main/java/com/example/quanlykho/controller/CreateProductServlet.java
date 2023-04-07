@@ -1,13 +1,17 @@
 package com.example.quanlykho.controller;
 
+import com.example.quanlykho.dao.CRUD_Products;
 import com.example.quanlykho.model.Products;
 import com.example.quanlykho.service.ProductService;
 
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
+
 // servlet tao san pham
 @WebServlet(name = "CreateProductServlet", value = "/CreateProductServlet")
 public class CreateProductServlet extends HttpServlet {
@@ -26,15 +30,27 @@ public class CreateProductServlet extends HttpServlet {
         Date productInputDay = Date.valueOf(request.getParameter("prDateInput"));
         Date productExpiry = Date.valueOf(request.getParameter("prDateEx"));
 
+
         if (productCode.isEmpty()||productName.isEmpty()||productPrice == 0|| productQuantity ==0||productImg.isEmpty()
                 || productDetail.isEmpty() || productExpiry.before(productInputDay) || productInputDay.after(new java.util.Date())){
             response.sendRedirect("/ShowProductsServlet");
-        }else {
-            ProductService service = new ProductService();
-            service.insert(new Products(productCode,productName,productPrice,
-                    productQuantity,productImg,productDetail,productInputDay,productExpiry,1));
-            response.sendRedirect("/ShowProductsServlet");
-
         }
+        for (Products p:
+                CRUD_Products.getAll()) {
+            if (p.getProductCode().equals(productCode) ){
+
+            }else {
+                ProductService service = new ProductService();
+                service.insert(new Products(productCode,productName,productPrice,
+                        productQuantity,productImg,productDetail,productInputDay,productExpiry,1));
+                response.sendRedirect("/ShowProductsServlet");
+                break;
+            }
+        }
+
+
+
+
+
     }
 }
