@@ -381,9 +381,9 @@
                                         <td><img src="${p.productImg}" width="150" height="100" alt="loading"></td>
                                         <td>${p.productInputDay}</td>
                                         <td>${p.productExpiry}</td>
-                                        <c:if test="${p.productStatus == 1} ">
+<%--                                        <c:if test="${p.productStatus == 1} ">--%>
                                         <td>Còn hàng</td>
-                                        </c:if>
+<%--                                        </c:if>--%>
                                         <td>${p.productDetail}</td>
                                         <td>
                                             <a type="button" class="btn btn-warning"
@@ -559,12 +559,10 @@
                 success: function(data) {
                     $('#createModal').modal('hide'); // Ẩn modal khi thêm sản phẩm thành công
                     $('body').append(successMsg); // Thêm thông báo thành công vào body
-                        window.location.reload()
                 },
                 error: function() {
                     $('#createModal').modal('hide'); // Ẩn modal khi thêm sản phẩm không thành công
                     $('body').append(errorMsg); // Thêm thông báo không thành công vào body
-                    window.location.href = '/ShowProductsServlet';
                 }
             });
         });

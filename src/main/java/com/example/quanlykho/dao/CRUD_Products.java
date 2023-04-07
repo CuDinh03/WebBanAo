@@ -61,8 +61,8 @@ public class CRUD_Products {
         }
     }
 
-    public static void delete(int id) {
-        try {
+    public static void delete(int id){
+        try{
             String sql = " UPDATE products SET productStatus = 0 WHERE productId = ? ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
