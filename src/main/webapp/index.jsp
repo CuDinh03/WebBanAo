@@ -1,12 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="UTF-8">
-
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -34,7 +33,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/BroadServlet">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.jsp">
 
             <div class="sidebar-brand-text mx-3">Chào quản lý: Cự Đinh</div>
         </a>
@@ -67,8 +66,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
-                    <a class="collapse-item" href="historyExport.jsp">Khu vực kho hàng</a>
-                    <a class="collapse-item" href="/ImportExportServlet">Thông tin nhập xuất kho</a>
+                    <a class="collapse-item" href="buttons.jsp">Khu vực kho hàng</a>
+                    <a class="collapse-item" href="cards.jsp">Thông tin nhập xuất kho</a>
                 </div>
             </div>
         </li>
@@ -129,7 +128,7 @@
                 <span>Thực phẩm</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/ShowProductsServlet">
+            <a class="nav-link" href="tables2.jsp">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Kho</span></a>
         </li>
@@ -356,6 +355,84 @@
             </nav>
             <!-- End of Topbar -->
 
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <h1 class="h3 mb-2 text-gray-800">Danh sách kho</h1>
+                <!-- DataTales Example -->
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Danh sách toàn bộ thực phẩm có trong kho
+                            <a type="button" class="btn btn-info" href="/edit-product?id=${p.idProduct}">Thêm mới</a>
+
+                        </h6>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                <tr>
+                                    <th>Mã thực phẩm</th>
+                                    <th>Tên thực phẩm</th>
+                                    <th>Giá thực phẩm</th>
+                                    <th>Số lượng sản phẩm</th>
+                                    <th>Ảnh</th>
+                                    <th>Ngày nhập kho</th>
+                                    <th>Hạn sử dụng</th>
+                                    <th>Loại sản phẩm</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chi tiết</th>
+                                    <th>Hành động</th>
+                                </tr>
+                                </thead>
+                                <tfoot>
+                                <tr>
+                                    <th>Mã thực phẩm</th>
+                                    <th>Tên thực phẩm</th>
+                                    <th>Giá thực phẩm</th>
+                                    <th>Số lượng sản phẩm</th>
+                                    <th>Ảnh</th>
+                                    <th>Ngày nhập kho</th>
+                                    <th>Hạn sử dụng</th>
+                                    <th>Loại thực phẩm</th>
+                                    <th>Trạng thái</th>
+                                    <th>Chi tiết</th>
+                                    <th>Hành động</th>
+                                </tr>
+                                </tfoot>
+                                <tbody>
+                                <c:forEach items="${products}" var="p">
+                                    <tr>
+                                        <td>${p.productCode}</td>
+                                        <td>${p.productName}</td>
+                                        <td>${p.productPrice} vnđ</td>
+                                        <td>${p.productQuantity}</td>
+                                        <td><img src="${p.productImg}" width="150" height="100" alt="loading"></td>
+                                        <td>${p.productInputDay}</td>
+                                        <td>${p.productExpiry}</td>
+                                        <td>${p.productTypes.productTypesName}</td>
+                                        <td>${p.productStatus}</td>
+                                        <td>${p.productDetail}</td>
+                                        <td>
+                                            <a type="button" class="btn btn-warning"
+                                               href="/edit-product?id=${p.productId}">Edit</a>
+                                            <a type="button" class="btn btn-danger" href="/delete?id=${p.productId} "
+                                               name="idProduct">Delete</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
 
         </div>
         <!-- End of Main Content -->
