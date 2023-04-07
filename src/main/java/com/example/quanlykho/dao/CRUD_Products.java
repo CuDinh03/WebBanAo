@@ -56,38 +56,50 @@ public class CRUD_Products {
             preparedStatement.setDate(7, products.getProductInputDay());
             preparedStatement.setDate(8, products.getProductExpiry());
             preparedStatement.execute();
-        }catch (SQLException throwables){
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
-    public static void delete(int id){
-        try{
+    public static void delete(int id) {
+        try {
             String sql = " UPDATE products SET productStatus = 0 WHERE productId = ? ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1,id);
+            preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
-        }catch (SQLException throwables){
+        } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
 
-    public static void edit(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry){
-    try{
-        String sql = "UPDATE products SET productCode = ? , productName = ? , productPrice = ? , productQuantity = ? , productImg = ? , productDetail = ? , productInputDay = ? , productExpiry = ? WHERE productId = ?  ";
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
-        preparedStatement.setString(1,productCode);
-        preparedStatement.setString(2,productName);
-        preparedStatement.setDouble(3,productPrice);
-        preparedStatement.setInt(4,productQuantity);
-        preparedStatement.setString(5,productImg);
-        preparedStatement.setString(6,productDetail);
-        preparedStatement.setDate(7,productInputDay);
-        preparedStatement.setDate(8,productExpiry);
-        preparedStatement.execute();
-    }catch (SQLException throwables){
-        throwables.printStackTrace();
+    public static void edit(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry) {
+        try {
+            String sql = "UPDATE products SET productCode = ? , productName = ? , productPrice = ? , productQuantity = ? , productImg = ? , productDetail = ? , productInputDay = ? , productExpiry = ? WHERE productId = ?  ";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, productCode);
+            preparedStatement.setString(2, productName);
+            preparedStatement.setDouble(3, productPrice);
+            preparedStatement.setInt(4, productQuantity);
+            preparedStatement.setString(5, productImg);
+            preparedStatement.setString(6, productDetail);
+            preparedStatement.setDate(7, productInputDay);
+            preparedStatement.setDate(8, productExpiry);
+            preparedStatement.setInt(9, productId);
+            preparedStatement.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
+    public static void editQuantity(String productCode, int productQuantity) {
+        try {
+            String sql = "UPDATE products SET productQuantity = ? WHERE productCode like ?  ";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, productQuantity);
+            preparedStatement.setString(2, productCode);
+            preparedStatement.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     public Products getSingleProduct(int id) {
@@ -103,13 +115,14 @@ public class CRUD_Products {
                 row = new Products();
                 row.setProductId(rs.getInt("productId"));
                 row.setProductCode(rs.getString("productCode"));
-                row.setProductName(rs.getString( "productName"));
-                row.setProductPrice(Double.parseDouble(rs.getString( "productPrice")));
-                row.setProductQuantity(Integer.parseInt(rs.getString( "productQuantity")));
-                row.setProductImg(rs.getString( "productImg"));
-                row.setProductDetail(rs.getString( "productDetail"));
-                row.setProductInputDay(Date.valueOf(rs.getString( "productInputDay")));
-                row.setProductExpiry(Date.valueOf( rs.getString( "productExpiry")));
+                row.setProductName(rs.getString("productName"));
+                row.setProductPrice(Double.parseDouble(rs.getString("productPrice")));
+                row.setProductQuantity(Integer.parseInt(rs.getString("productQuantity")));
+                row.setProductImg(rs.getString("productImg"));
+                row.setProductDetail(rs.getString("productDetail"));
+                row.setProductInputDay(Date.valueOf(String.valueOf(rs.getDate("productInputDay"))));
+                row.setProductExpiry(Date.valueOf(String.valueOf(rs.getDate("productExpiry"))));
+
             }
         } catch (Exception e) {
             e.printStackTrace();

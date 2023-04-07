@@ -1,10 +1,11 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -66,7 +67,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
                     <a class="collapse-item" href="buttons.html">Khu vực kho hàng</a>
-                    <a class="collapse-item" href="cards.jsp">Thông tin nhập xuất kho</a>
+                    <a class="collapse-item" href="/ImportExportServlet">Thông tin nhập xuất kho</a>
                 </div>
             </div>
         </li>
@@ -501,7 +502,7 @@
             <div class="modal-body">Chọn "đăng xuất" nếu bạn thực sự muốn đăng xuất ra ngoài</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
-                <a class="btn btn-primary" href="login.jsp">Đăng xuất</a>
+                <a class="btn btn-primary" href="/logout">Đăng xuất</a>
             </div>
         </div>
     </div>
