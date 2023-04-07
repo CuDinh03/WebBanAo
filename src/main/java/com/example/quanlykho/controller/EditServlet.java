@@ -34,8 +34,13 @@ public class EditServlet extends HttpServlet {
         Date productInputDay = Date.valueOf(request.getParameter("prDateInput"));
         Date productExpiry = Date.valueOf(request.getParameter("prDateEx"));
 
-
-        CRUD_Products.edit(id,productCode,productName,productPrice,productQuantity,productImg,productDetail,productInputDay,productExpiry);
-        response.sendRedirect("/ShowProductsServlet");
+        for (Products p:
+                CRUD_Products.getAll()) {
+            if (productCode.equals(p.getProductCode())) {
+                CRUD_Products.edit(id, productCode, productName, productPrice, productQuantity, productImg, productDetail, productInputDay, productExpiry);
+                response.sendRedirect("/ShowProductsServlet");
+                break;
+            }
+        }
     }
 }

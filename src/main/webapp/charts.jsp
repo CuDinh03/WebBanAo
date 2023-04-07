@@ -67,7 +67,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
                     <a class="collapse-item" href="buttons.html">Khu vực kho hàng</a>
-                    <a class="collapse-item" href="cards.jsp">Thông tin nhập xuất kho</a>
+                    <a class="collapse-item" href="/ImportExportServlet">Thông tin nhập xuất kho</a>
                 </div>
             </div>
         </li>

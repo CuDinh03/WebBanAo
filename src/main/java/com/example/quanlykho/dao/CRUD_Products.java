@@ -90,6 +90,17 @@ public class CRUD_Products {
             throwables.printStackTrace();
         }
     }
+    public static void editQuantity(String productCode, int productQuantity) {
+        try {
+            String sql = "UPDATE products SET productQuantity = ? WHERE productCode like ?  ";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, productQuantity);
+            preparedStatement.setString(2, productCode);
+            preparedStatement.execute();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 
     public Products getSingleProduct(int id) {
         Products row = null;

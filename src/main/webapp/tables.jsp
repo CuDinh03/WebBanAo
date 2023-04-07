@@ -78,8 +78,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
-                    <a class="collapse-item" href="buttons.jsp">Khu vực kho hàng</a>
-                    <a class="collapse-item" href="cards.jsp">Thông tin nhập xuất kho</a>
+                    <a class="collapse-item" href="historyExport.jsp">Khu vực kho hàng</a>
+                    <a class="collapse-item" href="/ImportExportServlet">Thông tin nhập xuất kho</a>
                 </div>
             </div>
         </li>
@@ -381,7 +381,9 @@
                                         <td><img src="${p.productImg}" width="150" height="100" alt="loading"></td>
                                         <td>${p.productInputDay}</td>
                                         <td>${p.productExpiry}</td>
-                                        <td>${p.productStatus}</td>
+                                        <c:if test="${p.productStatus == 1} ">
+                                        <td>Còn hàng</td>
+                                        </c:if>
                                         <td>${p.productDetail}</td>
                                         <td>
                                             <a type="button" class="btn btn-warning"
@@ -533,17 +535,17 @@
         <%-- Xử lý khi thêm sản phẩm thành công --%>
         var successMsg = '<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999">' +
             '<strong>Thêm sản phẩm thành công!</strong>' +
-            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<a href="/ShowProductsServlet" type="button" class="close" data-dismiss="alert" aria-label="Close">' +
             '<span aria-hidden="true">&times;</span>' +
-            '</button>' +
+            '</a>' +
             '</div>';
 
         <%-- Xử lý khi thêm sản phẩm không thành công --%>
         var errorMsg = '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999">' +
             '<strong>Thêm sản phẩm không thành công!</strong>' +
-            '<button type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<a href="/ShowProductsServlet" type="button" class="close" data-dismiss="alert" aria-label="Close">' +
             '<span aria-hidden="true">&times;</span>' +
-            '</button>' +
+            '</a>' +
             '</div>';
 
         <%-- Thêm xử lý submit form --%>
@@ -557,12 +559,12 @@
                 success: function(data) {
                     $('#createModal').modal('hide'); // Ẩn modal khi thêm sản phẩm thành công
                     $('body').append(successMsg); // Thêm thông báo thành công vào body
-                    location.reload();
+                        window.location.reload()
                 },
                 error: function() {
                     $('#createModal').modal('hide'); // Ẩn modal khi thêm sản phẩm không thành công
                     $('body').append(errorMsg); // Thêm thông báo không thành công vào body
-                    location.reload();
+                    window.location.href = '/ShowProductsServlet';
                 }
             });
         });
