@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,6 +22,8 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 
@@ -127,7 +131,7 @@
                 <span>Thực phẩm</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tables2.jsp">
+            <a class="nav-link" href="/ShowWarehouseServlet">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Kho</span></a>
         </li>
@@ -360,8 +364,9 @@
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Danh sách toàn bộ thực phẩm có trong kho
-                            <a type="button" class="btn btn-info" href="/edit-product?id=${p.idProduct}">Thêm mới</a>
-
+                            <a class="btn btn-info" type="button" data-toggle="modal" data-target="#createModal">
+                                Thêm mới
+                            </a>
                         </h6>
 
                     </div>
@@ -372,9 +377,7 @@
                                 <tr>
                                     <th>Mã kho hàng</th>
                                     <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
                                     <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
                                     <th>Trạng thái kho hàng</th>
                                     <th>Hành động</th>
 
@@ -384,75 +387,56 @@
                                 <tr>
                                     <th>Mã kho hàng</th>
                                     <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
                                     <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
                                     <th>Trạng thái kho hàng</th>
                                     <th>Hành động</th>
 
                                 </tr>
                                 </tfoot>
                                 <tbody>
-                                <tr>
-                                    <td>KHCG550</td>
-                                    <td>Kho hàng Cầu Giấy</td>
-                                    <td>Danh sách: </td>
-                                    <td>20 Xuân Thuỷ, Cầu Giấy, Hà Nội </td>
-                                    <td>Kho thực phẩm</td>
-                                    <td>Kho vẫn sử dụng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHTX889</td>
-                                    <td>Kho hàng Thanh Xuân</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHDD668</td>
-                                    <td>Kho hàng Đống Đa</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHVT363</td>
-                                    <td>Kho hàng Vĩnh Tuy</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHHCM226</td>
-                                    <td>Kho hàng Hồ Chí Minh</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
+
+
+                                <c:forEach items="${warehouses}" var="w">
+                                    <tr>
+                                        <td>${w.wareHouseCode}</td>
+                                        <td>${w.wareHouseName}</td>
+                                        <td>${w.wareHouseLocation}</td>
+                                            <%--                                        <c:if test="${p.productStatus == 1} ">--%>
+                                        <td>Còn hàng</td>
+                                            <%--                                        </c:if>--%>
+                                        <td>
+                                            <a type="button" class="btn btn-warning"
+                                               href="">Edit</a>
+
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal${w.wareHouseId}">
+                                                Xoá
+                                            </button>
+                                            <!-- Confirm Delete Modal -->
+                                            <div class="modal fade" id="confirmDeleteModal${w.wareHouseId}" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="confirmDeleteModalLabel${w.wareHouseId}">Xác nhận xóa kho hàng</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Bạn có chắc chắn muốn xóa kho hàng này không?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy bỏ</button>
+                                                            <a type="button" class="btn btn-danger" href="/DeleteWarehouseServlet?id=${w.wareHouseId}">Xoá</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+
 
                                 </tbody>
                             </table>
@@ -506,6 +490,86 @@
         </div>
     </div>
 </div>
+
+<form action="/CreateWarehouseServlet" method="post" accept-charset="UTF-8">
+    <!-- Create Modal-->
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModalProduct"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createModalProduct">Thêm mới sản phẩm</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <%--            nội dung thêm sản phẩm --%>
+
+                <div class="modal-body">
+
+
+                    <p class="text-dark text-md-left">Mã Kho Hàng</p>
+                    <input class="form-control" type="text" name="wrCode" required>
+
+                    <p class="text-dark text-md-left">Tên kho hàng</p>
+                    <input class="form-control" type="text" name="wrName" required>
+
+                    <p class="text-dark text-md-left">Địa chỉ kho hàng</p>
+                    <input class="form-control" type="text" name="wrAddress" required>
+
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Huỷ</button>
+                    <button class="btn btn-primary" type="submit" id="addProductBtn" formmethod="post">Thêm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script>
+    $(document).ready(function() {
+        <%-- Xử lý khi thêm sản phẩm thành công --%>
+        var successMsg = '<div class="alert alert-success alert-dismissible fade show" role="alert" style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999">' +
+            '<strong>Thêm sản phẩm thành công!</strong>' +
+            '<a href="/ShowWarehouseServlet" type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<span aria-hidden="true">&times;</span>' +
+            '</a>' +
+            '</div>';
+
+        <%-- Xử lý khi thêm sản phẩm không thành công --%>
+        var errorMsg = '<div class="alert alert-danger alert-dismissible fade show" role="alert" style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999">' +
+            '<strong>Thêm sản phẩm không thành công!</strong>' +
+            '<a href="/ShowWarehouseServlet" type="button" class="close" data-dismiss="alert" aria-label="Close">' +
+            '<span aria-hidden="true">&times;</span>' +
+            '</a>' +
+            '</div>';
+
+        <%-- Thêm xử lý submit form --%>
+        $("#addProductBtn").click(function(event) {
+            event.preventDefault(); // Ngăn chặn việc submit form mặc định
+
+            $.ajax({
+                type: "POST",
+                url: "/CreateWarehouseServlet",
+                data: $('form').serialize(),
+                success: function(data) {
+                    $('#createModal').modal('hide'); // Ẩn modal khi thêm sản phẩm thành công
+                    $('body').append(successMsg); // Thêm thông báo thành công vào body
+                },
+                error: function() {
+                    $('#createModal').modal('hide'); // Ẩn modal khi thêm sản phẩm không thành công
+                    $('body').append(errorMsg); // Thêm thông báo không thành công vào body
+                }
+            });
+        });
+    });
+
+
+
+</script>
+
 
 <!-- Bootstrap core JavaScript-->
 <!-- Bootstrap core JavaScript-->

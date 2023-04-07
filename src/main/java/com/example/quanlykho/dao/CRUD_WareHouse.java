@@ -25,12 +25,11 @@ public class CRUD_WareHouse {
                 int wareHouseId1 = resultSet.getInt("wareHouseId");
                 String wareHouseCode1 = resultSet.getString("wareHouseCode");
                 String wareHouseName1 = resultSet.getString("wareHouseName");
-                Products products1 = (Products) resultSet.getObject("products");
                 String wareHouseLocation1 = resultSet.getString("wareHouseLocation");
                 int wareHouseStatus1 = Integer.parseInt(resultSet.getString("wareHouseStatus"));
 
                 warehouses.add(new Warehouse(wareHouseId1, wareHouseCode1,
-                        wareHouseName1, products1, wareHouseLocation1,
+                        wareHouseName1, wareHouseLocation1,
                         wareHouseStatus1));
             }
         } catch (SQLException e) {
@@ -42,12 +41,11 @@ public class CRUD_WareHouse {
 
     public static void save(Warehouse warehouses) {
         try {
-            String sql = " insert into warehouses(wareHouseCode,wareHouseName,products,wareHouseLocation,wareHouseStatus) values (?,?,?,?,1) ";
+            String sql = " insert into warehouses(wareHouseCode,wareHouseName,wareHouseLocation,wareHouseStatus) values (?,?,?,1) ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, warehouses.getWareHouseCode());
             preparedStatement.setString(2, warehouses.getWareHouseName());
-//            preparedStatement.setString(3, String.valueOf(warehouses.getProducts()));
-            preparedStatement.setString(4, warehouses.getWareHouseLocation());
+            preparedStatement.setString(3, warehouses.getWareHouseLocation());
 
             preparedStatement.execute();
         }catch (SQLException throwables){
@@ -66,14 +64,14 @@ public class CRUD_WareHouse {
         }
     }
 
-    public static void edit(int wareHouseId, String wareHouseCode, String wareHouseName, String products, String wareHouseLocation){
+    public static void edit(int wareHouseId, String wareHouseCode, String wareHouseName, String wareHouseLocation){
         try{
-            String sql = "UPDATE warehouses SET wareHouseCode = ? , wareHouseName = ? , products = ? , wareHouseLocation = ?, WHERE wareHouseId = ?  ";
+            String sql = "UPDATE warehouses SET wareHouseCode = ? , wareHouseName = ? , wareHouseLocation = ?, WHERE wareHouseId = ?  ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,wareHouseCode);
             preparedStatement.setString(2,wareHouseName);
-//            preparedStatement.setString(3,products);
-            preparedStatement.setString(2,wareHouseLocation);
+            preparedStatement.setString(3,wareHouseLocation);
+            preparedStatement.setInt(4,wareHouseId);
 
             preparedStatement.execute();
         }catch (SQLException throwables){
@@ -95,7 +93,6 @@ public class CRUD_WareHouse {
                 row.setWareHouseId(rs.getInt("wareHouseId"));
                 row.setWareHouseCode(rs.getString("wareHouseCode"));
                 row.setWareHouseName(rs.getString( "wareHouseName"));
-//                row.setProducts((Products)rs.getObject("products"));
                 row.setWareHouseLocation(rs.getString( "wareHouseLocation"));
             }
         } catch (Exception e) {

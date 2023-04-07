@@ -230,7 +230,7 @@
                 <span>Thực phẩm</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="tables2.jsp">
+            <a class="nav-link" href="/ShowWarehouseServlet">
                 <i class="fas fa-fw fa-table"></i>
                 <span>Kho</span></a>
         </li>

@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("passWord",users.getPassWord());
             response.sendRedirect("/BroadServlet");
         }else {
-            response.sendRedirect("/LoginServerlet");
+            response.sendRedirect("/LoginServlet");
         }
     }
 }

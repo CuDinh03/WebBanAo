@@ -1,5 +1,6 @@
 package com.example.quanlykho.service;
 
+import com.example.quanlykho.dao.CRUD_WareHouse;
 import com.example.quanlykho.model.Warehouse;
 
 import java.util.List;
@@ -22,7 +23,7 @@ public class WarehouseService implements IService<Warehouse>{
 
     @Override
     public List<Warehouse> select() {
-        return null;
+        return CRUD_WareHouse.getAll();
     }
 
     @Override
