@@ -66,13 +66,12 @@ public class CRUD_WareHouse {
 
     public static void edit(int wareHouseId, String wareHouseCode, String wareHouseName, String wareHouseLocation){
         try{
-            String sql = "UPDATE warehouses SET wareHouseCode = ? , wareHouseName = ? , wareHouseLocation = ?, WHERE wareHouseId = ?  ";
+            String sql = "UPDATE warehouses SET wareHouseCode = ? , wareHouseName = ? , wareHouseLocation = ? WHERE wareHouseId = ?  ";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1,wareHouseCode);
             preparedStatement.setString(2,wareHouseName);
             preparedStatement.setString(3,wareHouseLocation);
             preparedStatement.setInt(4,wareHouseId);
-
             preparedStatement.execute();
         }catch (SQLException throwables){
             throwables.printStackTrace();
