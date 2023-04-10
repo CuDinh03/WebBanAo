@@ -24,6 +24,25 @@
 
 </head>
 
+<style >
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        grid-gap: 20px;
+    }
+
+    .card {
+        display: grid;
+        grid-template-rows: max-content 200px 1fr;
+    }
+
+    .card img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
 <body id="page-top">
 
 <!-- Page Wrapper -->
@@ -357,108 +376,25 @@
             <div class="container-fluid">
 
                 <!-- Page Heading -->
-                <h1 class="h3 mb-2 text-gray-800">Danh sách kho</h1>
+                <h1 class="h3 mb-2 text-gray-800">Lịch sử xuất kho</h1>
                 <!-- DataTales Example -->
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Danh sách toàn bộ thực phẩm có trong kho
-                            <a type="button" class="btn btn-info" href="/edit-product?id=${p.idProduct}">Thêm mới</a>
 
-                        </h6>
-
-                    </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
-                                    <th>Hành động</th>
+                        <article class="card">
+                            <header>
+                                <h2>Tên phiếu xuất </h2>
+                                <h3>Mã phiếu: </h3>
+                            </header>
+                                <table>
+                                    <tr>Tên thực phẩm: </tr>
+                                    <tr>Ngày xuất kho: </tr>
+                                    <tr>Tên kho hàng : </tr>
+                                    <tr>Số lượng xuất: </tr>
+                                </table>
 
-                                </tr>
-                                </thead>
-                                <tfoot>
-                                <tr>
-                                    <th>Mã kho hàng</th>
-                                    <th>Tên kho hàng</th>
-                                    <th>Thực phẩm trong kho</th>
-                                    <th>Địa chỉ kho hàng</th>
-                                    <th>Loại kho hàng</th>
-                                    <th>Trạng thái kho hàng</th>
-                                    <th>Hành động</th>
+                        </article>
 
-                                </tr>
-                                </tfoot>
-                                <tbody>
-                                <tr>
-                                    <td>KHCG550</td>
-                                    <td>Kho hàng Cầu Giấy</td>
-                                    <td>Danh sách: </td>
-                                    <td>20 Xuân Thuỷ, Cầu Giấy, Hà Nội </td>
-                                    <td>Kho thực phẩm</td>
-                                    <td>Kho vẫn sử dụng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHTX889</td>
-                                    <td>Kho hàng Thanh Xuân</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHDD668</td>
-                                    <td>Kho hàng Đống Đa</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHVT363</td>
-                                    <td>Kho hàng Vĩnh Tuy</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>KHHCM226</td>
-                                    <td>Kho hàng Hồ Chí Minh</td>
-                                    <td>Thực phẩm trong kho</td>
-                                    <td>Địa chỉ kho hàng</td>
-                                    <td>Loại kho hàng</td>
-                                    <td>Trạng thái kho hàng</td>
-                                    <td>
-                                        <a type="button" class="btn btn-warning" href="/edit-product?id=${p.idProduct}">Edit</a>
-                                        <a type="button" class="btn btn-danger" href="/delete?id=${p.idProduct} " name="idProduct">Delete</a>
-                                    </td>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
 
