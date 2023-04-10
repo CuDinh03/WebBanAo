@@ -24,6 +24,16 @@ public class HistoryExport {
         this.quantity = quantity;
     }
 
+
+    public HistoryExport(String hsCode, String hsName, Date date, String prName, String wrName, int quantity) {
+        this.hsCode = hsCode;
+        this.hsName = hsName;
+        this.date = date;
+        this.prName = prName;
+        this.wrName = wrName;
+        this.quantity = quantity;
+    }
+
     public int getId() {
         return id;
     }
@@ -48,8 +58,8 @@ public class HistoryExport {
         this.hsName = hsName;
     }
 
-    public Date getDate() {
-        return date;
+    public java.sql.Date getDate() {
+        return (java.sql.Date) date;
     }
 
     public void setDate(Date date) {

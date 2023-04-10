@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -378,25 +380,27 @@
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Lịch sử xuất kho</h1>
                 <!-- DataTales Example -->
+                <c:forEach var="h" items="${historyExports}">
                 <div class="card shadow mb-4">
 
                     <div class="card-body">
                         <article class="card">
                             <header>
-                                <h2>Tên phiếu xuất </h2>
-                                <h3>Mã phiếu: </h3>
+                                <h2>${h.hsName}</h2>
+                                <h3>Mã phiếu: ${h.hsCode} </h3>
                             </header>
                                 <table>
-                                    <tr>Tên thực phẩm: </tr>
-                                    <tr>Ngày xuất kho: </tr>
-                                    <tr>Tên kho hàng : </tr>
-                                    <tr>Số lượng xuất: </tr>
+                                    <tr>Tên thực phẩm: ${h.prName}</tr>
+                                    <tr>Ngày xuất kho: ${h.date}</tr>
+                                    <tr>Tên kho hàng : ${h.wrName}</tr>
+                                    <tr>Số lượng xuất: ${h.quantity}</tr>
                                 </table>
 
                         </article>
 
                     </div>
                 </div>
+                </c:forEach>
 
             </div>
             <!-- /.container-fluid -->
@@ -423,7 +427,7 @@
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
-</a>
+</a>gi
 
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
