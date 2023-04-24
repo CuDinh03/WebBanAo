@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("id",users.getId());
             session.setAttribute("userName",users.getUserName());
             session.setAttribute("passWord",users.getPassWord());
-            response.sendRedirect("/BroadServlet");
+            response.sendRedirect("/ShowProductsServlet");
         }else {
             response.sendRedirect("/LoginServlet");
         }

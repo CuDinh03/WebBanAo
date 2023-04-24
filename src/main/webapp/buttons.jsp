@@ -65,7 +65,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
-                    <a class="collapse-item" href="buttons.jsp">Khu vực kho hàng</a>
+                    <a class="collapse-item" href="/HistoryExportServlet">Lịch sử xuất kho
+                    </a>
                     <a class="collapse-item" href="cards.jsp">Thông tin nhập xuất kho</a>
                 </div>
             </div>
@@ -340,7 +341,7 @@
                                 Cài đặt
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                            <a class="dropdown-item" data-toggle="modal" data-target="#logoutModal">
                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Đăng xuất
                             </a>

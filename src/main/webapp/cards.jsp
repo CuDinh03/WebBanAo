@@ -65,7 +65,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
-                    <a class="collapse-item" href="buttons.jsp">Khu vực kho hàng</a>
+                    <a class="collapse-item" href="/HistoryExportServlet">Lịch sử xuất kho
+                    </a>
                     <a class="collapse-item" href="cards.jsp">Thông tin nhập xuất kho</a>
                 </div>
             </div>

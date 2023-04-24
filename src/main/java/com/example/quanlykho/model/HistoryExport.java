@@ -1,6 +1,7 @@
 package com.example.quanlykho.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 public class HistoryExport {
     private int id;
@@ -12,6 +13,15 @@ public class HistoryExport {
     private int quantity;
 
     public HistoryExport() {
+    }
+
+    public HistoryExport(String hsCode, String hsName, Date date, String prName, String wrName, int quantity) {
+        this.hsCode = hsCode;
+        this.hsName = hsName;
+        this.date = date;
+        this.prName = prName;
+        this.wrName = wrName;
+        this.quantity = quantity;
     }
 
     public HistoryExport(int id, String hsCode, String hsName, Date date, String prName, String wrName, int quantity) {

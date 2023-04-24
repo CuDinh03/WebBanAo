@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,7 +86,8 @@
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Tuỳ chọn nâng cao: </h6>
-                    <a class="collapse-item" href="historyExport.jsp">Khu vực kho hàng</a>
+                    <a class="collapse-item" href="/HistoryExportServlet">Lịch sử xuất kho
+                    </a>
                     <a class="collapse-item" href="/ImportExportServlet">Thông tin nhập xuất kho</a>
                 </div>
             </div>
@@ -377,26 +379,32 @@
 
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Lịch sử xuất kho</h1>
-                <!-- DataTales Example -->
                 <div class="card shadow mb-4">
+                <!-- DataTales Example -->
+                <c:forEach items="${historyExport}" var="ex">
+
+
 
                     <div class="card-body">
                         <article class="card">
                             <header>
-                                <h2>Tên phiếu xuất </h2>
-                                <h3>Mã phiếu: </h3>
+                                <h2>Tên phiếu xuất: ${ex.hsName} </h2>
+                                <h3>Mã phiếu: ${ex.hsCode} </h3>
                             </header>
                                 <table>
-                                    <tr>Tên thực phẩm: </tr>
-                                    <tr>Ngày xuất kho: </tr>
-                                    <tr>Tên kho hàng : </tr>
-                                    <tr>Số lượng xuất: </tr>
+                                    <tr>Tên thực phẩm: ${ex.prName} </tr>
+                                    <tr>Ngày xuất kho: ${ex.wrName} </tr>
+                                    <tr>Tên kho hàng : ${ex.hsCode} </tr>
+                                    <tr>Số lượng xuất: ${ex.quantity} </tr>
                                 </table>
 
                         </article>
 
                     </div>
+
+                </c:forEach>
                 </div>
+
 
             </div>
             <!-- /.container-fluid -->
