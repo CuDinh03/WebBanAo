@@ -1,6 +1,6 @@
 package com.example.quanlykho.controller.filter;
 
-import com.example.quanlykho.model.Users;
+import com.example.quanlykho.model.User;
 import org.junit.jupiter.api.Test;
 
 import javax.servlet.FilterChain;
@@ -41,7 +41,7 @@ public class UserFilterTest {
         FilterChain filterChain = mock(FilterChain.class);
         HttpSession session = mock(HttpSession.class);
         when(request.getSession()).thenReturn(session);
-        when(session.getAttribute("user")).thenReturn(new Users());
+        when(session.getAttribute("user")).thenReturn(new User());
 
         // Act
         userFilter.doFilter(request, response, filterChain);

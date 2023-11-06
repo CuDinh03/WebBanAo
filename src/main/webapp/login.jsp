@@ -1,105 +1,89 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
 
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
-
+    <title>Minh Mon store</title>
     <meta charset="UTF-8">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Quản lý kho hàng </title>
-
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Font Awesome -->
     <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+            rel="stylesheet"
+    />
 
-    <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- MDB -->
+    <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+    ></script>
+    <style>
+        .bg-image-vertical {
+            position: relative;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: auto 100%;
+        }
 
+        @media (min-width: 1025px) {
+            .h-custom-2 {
+                height: 100%;
+            }
+        }
+    </style>
 </head>
+<body>
+<section class="vh-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 text-black">
 
-<body class="bg-gradient-primary">
+                <div class="px-5 ms-xl-4">
+                    <i class="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" style="color: #9abf6a;"></i>
+                </div>
 
-    <div class="container">
+                <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
+                    <form style="width: 23rem;" action="/LoginServlet" method="POST">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+                        <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"> Đăng nhập</h3>
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Chào mừng bạn !</h1>
-                                    </div>
-                                    <form method="post" action="/LoginServlet" class="user">
-                                        <div class="form-group">
-                                            <input type="email" name="username" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" name="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </button>
-                                        <hr>
-                                        <a href="index.jsp" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.jsp" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="form-outline mb-4">
+                            <input type="text" id="form2Example18" name="username" class="form-control form-control-lg" />
+                            <label class="form-label" for="form2Example18">Tên đăng nhập</label>
                         </div>
-                    </div>
+
+                        <div class="form-outline mb-4">
+                            <input type="password" id="form2Example28" name="password" class="form-control form-control-lg" />
+                            <label class="form-label" for="form2Example28">Mật khẩu</label>
+                        </div>
+
+                        <div class="pt-1 mb-4">
+                            <button class="btn btn-info btn-lg btn-block" type="submit">Đăng nhập</button>
+                        </div>
+
+                        <p>Bạn chưa có tài khoản? <a href="/signup" class="link-info">Đăng ký </a></p>
+
+                    </form>
+
                 </div>
 
             </div>
-
+            <div class="col-sm-6 px-0 d-none d-sm-block">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img3.webp"
+                     alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+            </div>
         </div>
-
     </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="/vendor/jquery/jquery.min.js"></script>
-    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="/js/sb-admin-2.min.js"></script>
-
+</section>
 </body>
-
 </html>

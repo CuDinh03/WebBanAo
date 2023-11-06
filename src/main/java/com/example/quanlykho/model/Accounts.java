@@ -5,9 +5,17 @@ public class Accounts {
     private String accountName;
     private String infor;
     private Warehouse warehouse;
+
+    private int userId;
     private int status;
 
     public Accounts() {
+    }
+
+    public Accounts(String accountName, int userId, int status) {
+        this.accountName = accountName;
+        this.userId = userId;
+        this.status = status;
     }
 
     public Accounts(int id, String accountName, String infor, Warehouse warehouse, int status) {
@@ -16,6 +24,15 @@ public class Accounts {
         this.infor = infor;
         this.warehouse = warehouse;
         this.status = status;
+    }
+
+    public Accounts(int id, String accountName, String infor, Warehouse warehouse, int userId, int status) {
+        this.id = id;
+        this.accountName = accountName;
+        this.infor = infor;
+        this.warehouse = warehouse;
+        this.status = status;
+        this.userId = userId;
     }
 
     public int getId() {
@@ -56,5 +73,13 @@ public class Accounts {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 }

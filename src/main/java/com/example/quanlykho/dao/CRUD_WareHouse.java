@@ -1,7 +1,7 @@
 package com.example.quanlykho.dao;
 
 
-import com.example.quanlykho.model.Products;
+
 import com.example.quanlykho.model.Warehouse;
 
 import java.sql.*;

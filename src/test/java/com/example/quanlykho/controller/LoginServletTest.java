@@ -1,7 +1,7 @@
 package com.example.quanlykho.controller;
 
 import com.example.quanlykho.dao.LoginDao;
-import com.example.quanlykho.model.Users;
+import com.example.quanlykho.model.User;
 import org.junit.jupiter.api.Test;
 
 import javax.servlet.RequestDispatcher;
@@ -36,7 +36,7 @@ public class LoginServletTest {
         // Arrange
         LoginServlet loginServlet = new LoginServlet();
         LoginDao loginDao = mock(LoginDao.class);
-        Users user = new Users();
+        User user = new User();
         user.setId(1);
         user.setUserName("admin@gmail.com");
         user.setPassWord("admin");

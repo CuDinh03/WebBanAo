@@ -1,6 +1,10 @@
 package com.example.quanlykho.controller;
+
+import com.example.quanlykho.dao.CRUD_Account;
 import com.example.quanlykho.dao.LoginDao;
-import com.example.quanlykho.model.Users;
+import com.example.quanlykho.model.Accounts;
+import com.example.quanlykho.model.User;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "LoginServerlet", value = "/LoginServlet")
+@WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,17 +24,26 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-        Users users = LoginDao.login(username,password);
-        if (users != null){
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        User user = LoginDao.login(username, password);
+
+        Accounts accounts = CRUD_Account.getById(user.getId());
+
+        if (user != null) {
             HttpSession session = request.getSession();
-            session.setAttribute("id",users.getId());
-            session.setAttribute("userName",users.getUserName());
-            session.setAttribute("passWord",users.getPassWord());
-            response.sendRedirect("/ShowProductsServlet");
-        }else {
-            response.sendRedirect("/LoginServlet");
+            session.setAttribute("user", user);
+            session.setAttribute("account", accounts);
+
+            if (user.getStatus() == 1) {
+                response.sendRedirect(request.getContextPath() + "/BroadServlet");
+            } else if (user.getStatus() == 2) {
+                response.sendRedirect(request.getContextPath() + "/ShowProductsServlet");
+            } else {
+                response.sendRedirect(request.getContextPath() + "/LoginServlet");
+            }
+        } else {
+            response.sendRedirect(request.getContextPath() + "/LoginServlet");
         }
     }
 }

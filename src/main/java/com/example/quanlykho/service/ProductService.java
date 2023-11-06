@@ -13,7 +13,7 @@ public class ProductService implements IService<Products>{
 
     @Override
     public void update(Products products, int index) {
-        CRUD_Products.edit(products.getProductId(), products.getProductCode(), products.getProductName(), products.getProductPrice(), products.getProductQuantity(), products.getProductImg(), products.getProductDetail(), products.getProductInputDay(),products.getProductExpiry());
+        CRUD_Products.edit(products.getProductId(), products.getProductCode(), products.getProductName(), products.getProductPrice(), products.getProductQuantity(), products.getProductImg(), products.getProductDetail(), products.getProductInputDay());
     }
 
     @Override

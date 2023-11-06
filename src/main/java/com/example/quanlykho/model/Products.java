@@ -12,13 +12,12 @@ public class Products {
     private String productImg;
     private String productDetail;
     private Date productInputDay;
-    private Date productExpiry;
     private int productStatus;
 
     public Products() {
     }
 
-    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry, int productStatus) {
+    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay,  int productStatus) {
         this.productId = productId;
         this.productCode = productCode;
         this.productName = productName;
@@ -27,11 +26,10 @@ public class Products {
         this.productImg = productImg;
         this.productDetail = productDetail;
         this.productInputDay = productInputDay;
-        this.productExpiry = productExpiry;
         this.productStatus = productStatus;
     }
 
-    public Products(String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry, int productStatus) {
+    public Products(String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, int productStatus) {
         this.productCode = productCode;
         this.productName = productName;
         this.productPrice = productPrice;
@@ -39,12 +37,11 @@ public class Products {
         this.productImg = productImg;
         this.productDetail = productDetail;
         this.productInputDay = productInputDay;
-        this.productExpiry = productExpiry;
         this.productStatus = productStatus;
 
     }
 
-    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay, Date productExpiry) {
+    public Products(int productId, String productCode, String productName, double productPrice, int productQuantity, String productImg, String productDetail, Date productInputDay) {
         this.productId = productId;
         this.productCode = productCode;
         this.productName = productName;
@@ -53,7 +50,6 @@ public class Products {
         this.productImg = productImg;
         this.productDetail = productDetail;
         this.productInputDay = productInputDay;
-        this.productExpiry = productExpiry;
     }
 
     public Date getProductInputDay() {
@@ -112,13 +108,6 @@ public class Products {
         this.productDetail = productDetail;
     }
 
-    public Date getProductExpiry() {
-        return productExpiry;
-    }
-
-    public void setProductExpiry(Date productExpiry) {
-        this.productExpiry = productExpiry;
-    }
 
     public int getProductStatus() {
         return productStatus;

@@ -37,7 +37,7 @@ public class EditServlet extends HttpServlet {
         for (Products p:
                 CRUD_Products.getAll()) {
             if (productCode.equals(p.getProductCode())) {
-                CRUD_Products.edit(id, productCode, productName, productPrice, productQuantity, productImg, productDetail, productInputDay, productExpiry);
+                CRUD_Products.edit(id, productCode, productName, productPrice, productQuantity, productImg, productDetail, productInputDay);
                 response.sendRedirect("/ShowProductsServlet");
                 break;
             }

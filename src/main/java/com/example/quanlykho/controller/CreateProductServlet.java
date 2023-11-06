@@ -28,11 +28,10 @@ public class CreateProductServlet extends HttpServlet {
         String productImg =  request.getParameter("prImg");
         String productDetail = request.getParameter("prDetail");
         Date productInputDay = Date.valueOf(request.getParameter("prDateInput"));
-        Date productExpiry = Date.valueOf(request.getParameter("prDateEx"));
 
 
         if (productCode.isEmpty()||productName.isEmpty()||productPrice == 0|| productQuantity ==0||productImg.isEmpty()
-                || productDetail.isEmpty() || productExpiry.before(productInputDay) || productInputDay.after(new java.util.Date())){
+                || productDetail.isEmpty() || productInputDay.after(new java.util.Date())){
             response.sendRedirect("/ShowProductsServlet");
         }
         for (Products p:
@@ -42,7 +41,7 @@ public class CreateProductServlet extends HttpServlet {
             }else {
                 ProductService service = new ProductService();
                 service.insert(new Products(productCode,productName,productPrice,
-                        productQuantity,productImg,productDetail,productInputDay,productExpiry,1));
+                        productQuantity,productImg,productDetail,productInputDay,1));
                 response.sendRedirect("/ShowProductsServlet");
                 break;
             }
