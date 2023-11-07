@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Minh Mon store</title>
+    <title>BoyPhostore</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="/img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,14 +20,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
 <!-- Spinner Start -->
@@ -95,7 +95,7 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-7 text-center">
-                                <p class="fs-4 text-white animated zoomIn">Chào mừng đến với <strong class="text-dark">Minh Mon store</strong></p>
+                                <p class="fs-4 text-white animated zoomIn">Chào mừng đến với <strong class="text-dark">BoyPhostore</strong></p>
                                 <h1 class="display-1 text-dark mb-4 animated zoomIn">Quần áo boi phố số 1 Việt Nam</h1>
                                 <a href="" class="btn btn-light rounded-pill py-3 px-5 animated zoomIn">Xem thêm</a>
                             </div>
@@ -109,7 +109,7 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-7 text-center">
-                                <p class="fs-4 text-white animated zoomIn">Chào mừng đến với <strong class="text-dark">Minh Mon store</strong></p>
+                                <p class="fs-4 text-white animated zoomIn">Chào mừng đến với <strong class="text-dark">BoyPhostore</strong></p>
                                 <h1 class="display-1 text-dark mb-4 animated zoomIn">Quần áo boi phố số 1 Việt Nam</h1>
                                 <a href="" class="btn btn-light rounded-pill py-3 px-5 animated zoomIn">Xem thêm</a>
                             </div>
@@ -406,7 +406,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                &copy; <a class="fw-medium" href="#">Minh Mon shop</a>, All Right Reserved.
+                &copy; <a class="fw-medium" href="#">BoyPhoshop</a>, All Right Reserved.
             </div>
             <!--                <div class="col-md-6 text-center text-md-end">-->
             <!--                    &lt;!&ndash;/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/&ndash;&gt;-->
@@ -425,13 +425,13 @@
 <!-- JavaScript Libraries -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="/lib/wow/wow.min.js"></script>
+<script src="/lib/easing/easing.min.js"></script>
+<script src="/lib/waypoints/waypoints.min.js"></script>
+<script src="/lib/owlcarousel/owl.carousel.min.js"></script>
 
 <!-- Template Javascript -->
-<script src="js/main.js"></script>
+<script src="/js/main.js"></script>
 </body>
 
 </html>
