@@ -14,8 +14,8 @@ ext {
     junitVersion = '5.8.2'
 }
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+sourceCompatibility = '17'
+targetCompatibility = '17'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -23,6 +23,10 @@ tasks.withType(JavaCompile) {
 
 dependencies {
     implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    testImplementation 'junit:junit:4.13.1'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.0'
+
+//    testImplementation 'org.testng:testng:7.1.0'
     compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '4.0.1'
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
@@ -31,11 +35,26 @@ dependencies {
     implementation group: 'com.mysql', name: 'mysql-connector-j', version: '8.0.32'
 
 
-    // https://mvnrepository.com/artifact/org.mockito/mockito-all
-    testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+// https://mvnrepository.com/artifact/org.mockito/mockito-core
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.6.0'
 
 
     implementation group: 'jstl', name: 'jstl', version: '1.2'
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.15.0'
+// https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation group: 'org.testng', name: 'testng', version: '7.8.0'
+// https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.9'
+// https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.5.3'
+    // https://mvnrepository.com/artifact/org.junit/org.junit
+//    implementation group: 'org.junit', name: 'org.junit', version: '4.8.1'
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation group: 'org.testng', name: 'testng', version: '7.8.0'
+
+
+
 }
 
 test {

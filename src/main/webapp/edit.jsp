@@ -300,7 +300,7 @@
 
 
 <!-- Page level custom scripts -->
-<script src="adminView/js/demo/datatables-demo.js"></script>
+<script src="/adminView/js/demo/datatables-demo.js"></script>
 <script>
     $(document).ready(function() {
         <%-- Xử lý khi sửa sản phẩm thành công --%>

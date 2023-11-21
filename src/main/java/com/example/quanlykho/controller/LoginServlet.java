@@ -26,24 +26,33 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        User user = LoginDao.login(username, password);
 
-        Accounts accounts = CRUD_Account.getById(user.getId());
+        if (username != "" && password != "") {
 
-        if (user != null) {
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            session.setAttribute("account", accounts);
+            User user = LoginDao.login(username, password);
 
-            if (user.getStatus() == 1) {
-                response.sendRedirect(request.getContextPath() + "/BroadServlet");
-            } else if (user.getStatus() == 2) {
-                response.sendRedirect(request.getContextPath() + "/ShowProductsServlet");
+            Accounts accounts = CRUD_Account.getById(user.getId());
+
+            if (user != null) {
+
+                HttpSession session = request.getSession();
+
+                session.setAttribute("user", user);
+                session.setAttribute("account", accounts);
+
+                if (user.getStatus() == 1) {
+                    response.sendRedirect(request.getContextPath() + "/BroadServlet");
+                } else if (user.getStatus() == 2) {
+                    response.sendRedirect(request.getContextPath() + "/ShowProductsServlet");
+                } else {
+                    response.sendRedirect(request.getContextPath() + "/LoginServlet");
+                }
             } else {
                 response.sendRedirect(request.getContextPath() + "/LoginServlet");
             }
-        } else {
+        }else {
             response.sendRedirect(request.getContextPath() + "/LoginServlet");
+
         }
     }
 }
