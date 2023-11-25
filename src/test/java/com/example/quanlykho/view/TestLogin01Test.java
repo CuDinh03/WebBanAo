@@ -28,7 +28,7 @@ public class TestLogin01Test {
   }
   @Test
   public void testLogin01() {
-    driver.get("http://localhost:9091/");
+    driver.get("http://localhost:9091/LoginServlet");
     driver.manage().window().setSize(new Dimension(1680, 982));
     driver.findElement(By.linkText("Đăng nhập")).click();
     driver.findElement(By.id("admin")).click();
