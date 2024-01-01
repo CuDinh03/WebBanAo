@@ -1,5 +1,4 @@
-<%@ page import="com.example.quanlykho.model.Items" %>
-<%@ page import="java.util.List" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -7,7 +6,7 @@
 
 <html>
 <head>
-    <title>BoyPho Shop</title>
+    <title>ASM4</title>
     <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
             rel="stylesheet"
@@ -94,7 +93,7 @@
                                             <h6 class="text-black mb-0">${items.products.productName}</h6>
                                         </div>
                                         <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                            <form action="CartServlet" method="post">
+                                            <form action="/CartServlet" method="post">
                                                 <input type="hidden" name="action" value="update">
                                                 <input type="hidden" name="id" value="${items.products.productId}">
                                                 <button class="btn btn-link px-2" name="updateQuantity" value="decrease">

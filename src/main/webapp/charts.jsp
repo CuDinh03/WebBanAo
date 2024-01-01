@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>BoyPho store </title>
+    <title>ASM4</title>
 
     <!-- Custom fonts for this template-->
     <link href="/adminView/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

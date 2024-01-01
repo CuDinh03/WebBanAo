@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>BoyPho store</title>
+    <title>ASM4</title>
     <meta charset="UTF-8">
     <!-- Font Awesome -->
     <link

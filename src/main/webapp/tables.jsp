@@ -21,7 +21,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>BoyPho store </title>
+    <title>ASM4</title>
 
     <!-- Custom fonts for this template-->
     <link href="/adminView/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -176,7 +176,7 @@
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
                         <h6 class="m-0 font-weight-bold text-primary">Danh sách toàn bộ thực phẩm có trong kho
-                            <a class="btn btn-info" type="button" data-toggle="modal" data-target="#createModal">
+                            <a class="btn btn-info" id="addBtn" type="button" data-toggle="modal" data-target="#createModal">
                                 Thêm mới
                             </a>
                         </h6>

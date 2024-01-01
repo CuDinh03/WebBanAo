@@ -19,7 +19,7 @@ public class EditServlet extends HttpServlet {
         CRUD_Products crud_product = new CRUD_Products();
         Products product = crud_product.getSingleProduct(id);
         request.setAttribute("pr",product);
-        request.getRequestDispatcher("edit.jsp").forward(request,response);
+        request.getRequestDispatcher("/edit.jsp").forward(request,response);
     }
 
     @Override
@@ -32,7 +32,6 @@ public class EditServlet extends HttpServlet {
         String productImg =  request.getParameter("prImg");
         String productDetail = request.getParameter("prDetail");
         Date productInputDay = Date.valueOf(request.getParameter("prDateInput"));
-        Date productExpiry = Date.valueOf(request.getParameter("prDateEx"));
 
         for (Products p:
                 CRUD_Products.getAll()) {
